@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ServPro</string>
+    <string name="txtTitle">Do you want to continue with...</string>
+    <string name="btnService">Services</string>
+    <string name="radBtnForService">Services</string>
+    <string name="radBtnForRegister">Upload Your Service</string>
+    <string name="btnNext">Next</string>
+    <string name="txtForSignIn">Already a member?</string>
+    <string name="btnLogIn">Log In</string>
+    <string name="forCity">Enter the name for city</string>
+    <string name="forService">Enter the Service you are looking in</string>
+    <string name="city">Vancouver</string>
+    <string name="btnShow">Show Services</string>
+
 </resources>
