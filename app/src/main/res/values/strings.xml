@@ -12,4 +12,14 @@
     <string name="city">Vancouver</string>
     <string name="btnShow">Show Services</string>
 
+    <string name="providerImage">Image</string>
+    <string name="providerName"> Name</string>
+    <string name="providerCity">City</string>
+    <string name="providerOccupation">Occupation</string>
+    <string name="providerAddress">Address</string>
+    <string name="providerPhone">Phone</string>
+    <string name="providerServices">Services</string>
+    <string name="btnRegister">Register</string>
+
+
 </resources>

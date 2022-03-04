@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }else if(radGroupOption.getCheckedRadioButtonId()==R.id.radBtnForService){
                 startActivity(new Intent(MainActivity.this, GetCityActivity.class));
             }else{
-                startActivity(new Intent(MainActivity.this, UserRegisterActivity.class));
+                startActivity(new Intent(MainActivity.this, LogInActivity.class));
             }
         });
 

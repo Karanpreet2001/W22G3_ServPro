@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServPro">
         <activity
+            android:name=".UploadBusActivity"
+            android:exported="false" />
+        <activity
             android:name=".ServicesActivity"
             android:exported="false" />
         <activity
