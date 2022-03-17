@@ -20,6 +20,7 @@
     <string name="providerPhone">Phone</string>
     <string name="providerServices">Services</string>
     <string name="btnRegister">Register</string>
+    <string name="uploadImageButtonTxt">Upload Image</string>
 
 
 </resources>
