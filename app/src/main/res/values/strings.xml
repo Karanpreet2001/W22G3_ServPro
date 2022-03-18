@@ -20,6 +20,19 @@
     <string name="providerPhone">Phone</string>
     <string name="providerServices">Services</string>
     <string name="btnRegister">Register</string>
-
+    <string name="regText">Register</string>
+    <string name="textHint">Enter Full Name</string>
+    <string name="emailHint">Email-ID</string>
+    <string name="AddressHint">Enter Complete Address</string>
+    <string name="alreadyText">Already Registered</string>
+    <string name="logintext">Login</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="thnk_reg">Thankyou for registering with us ..</string>
+    <string-array name="services">
+    <item>Laundry</item>
+    <item>Hair Spa</item>
+    <item>Grocery</item>
+    <item>Restraunts</item>
+</string-array>
 
 </resources>

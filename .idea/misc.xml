@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/button_bg.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/dialog_background.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/dialog_bg.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/ic_email.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/ic_home_24.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/input_bg.xml" value="0.1" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/inputbutton_bg.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/drawable/register_logo.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_get_city.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_get_service.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_login2.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_services.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_upload_bus.xml" value="0.6" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/activity_user_register.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/dialogbox_layout.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro/app/src/main/res/layout/layout_row.xml" value="0.12708333333333333" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_get_city.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_get_service.xml" value="0.23324275362318841" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_log_in.xml" value="0.25" />
