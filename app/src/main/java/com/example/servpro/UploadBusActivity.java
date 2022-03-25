@@ -27,16 +27,7 @@ public class UploadBusActivity extends AppCompatActivity {
 
         btnRegister=findViewById(R.id.btnRegister);
 
-        btnRegister.setOnClickListener((View view) -> {
 
-            DatabaseServ db= new DatabaseServ(UploadBusActivity.this);
-
-            db.addServiceProvider(editProName.getText().toString().trim(), editProCity.getText().toString().trim(),
-                    editProOccupation.getText().toString().trim(), editProAddress.getText().toString().trim(),
-                    editProPhone.getText().toString().trim(), editProImage.getText().toString().trim(),
-                    editProService.getText().toString().trim());
-
-        });
 
 
 
