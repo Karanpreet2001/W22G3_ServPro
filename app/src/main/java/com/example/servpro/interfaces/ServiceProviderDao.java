@@ -14,11 +14,14 @@ import java.util.List;
 @Dao
 public interface ServiceProviderDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertIntoServiceProvider(List<ServiceProvider> serviceProviderList);
 
-    @Query("SELECT * from serviceProvider where city = (:city) and occupation=(:occupation)")
-    List<ServiceProvider> getServiceProviderAccordingToCAO( String city, String occupation);
+    @Query("SELECT * from serviceProvider ")
+    List<ServiceProvider> getServiceProviderAccordingToCAO();
+
+    @Query("SELECT * from serviceProvider where city=(:city) and occupation=(:service)")
+    List<ServiceProvider> getServiceProviderAccordingly(String city, String service);
 
 
 }

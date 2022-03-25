@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class GetServiceActivity extends AppCompatActivity {
             try{
 
                 String service = editTextService.getText().toString();
-                String orgCity= bun.getString("CITY", "error");
+
 
                 if(service==null){
                     Toast.makeText(GetServiceActivity.this, "Please Enter the name of Service", Toast.LENGTH_SHORT).show();
@@ -47,8 +48,10 @@ public class GetServiceActivity extends AppCompatActivity {
 
 
                     Bundle bundle = new Bundle();
-                    bundle.getString("CITY", orgCity);
-                    bundle.getString("SER", service);
+                    bundle.putString("CITY", city);
+                    bundle.putString("SERVICE", service);
+
+                    Log.d("city",city +service);
 
                     in.putExtras(bundle);
 

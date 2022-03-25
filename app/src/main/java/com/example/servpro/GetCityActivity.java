@@ -9,6 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.servpro.models.ServiceProvider;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GetCityActivity extends AppCompatActivity {
 
     @Override
@@ -46,4 +55,5 @@ public class GetCityActivity extends AppCompatActivity {
 
         });
     }
+
 }

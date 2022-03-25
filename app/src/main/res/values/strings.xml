@@ -29,10 +29,10 @@
     <string name="LOGIN">LOGIN</string>
     <string name="thnk_reg">Thankyou for registering with us ..</string>
     <string-array name="services">
-    <item>Laundry</item>
-    <item>Hair Spa</item>
-    <item>Grocery</item>
-    <item>Restraunts</item>
-</string-array>
+        <item>Laundry</item>
+        <item>Hair Spa</item>
+        <item>Grocery</item>
+        <item>Restraunts</item>
+    </string-array>
 
 </resources>

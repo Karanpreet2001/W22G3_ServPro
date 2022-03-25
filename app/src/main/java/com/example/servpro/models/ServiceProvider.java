@@ -8,66 +8,67 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "serviceProvider")
 public class ServiceProvider {
 
-
+    @PrimaryKey
     @NonNull
     @ColumnInfo(name = "serviceProvider")
     private String serviceProvider;
 
+
     @NonNull
     @ColumnInfo(name = "age")
-    private int age;
+    private String age;
 
     @NonNull
     @ColumnInfo(name = "occupation")
     private String occupation;
 
-    @NonNull
-    @PrimaryKey
     @ColumnInfo(name = "email")
     private String email;
 
-    @NonNull
+
     @ColumnInfo(name = "phone")
     private String phone;
 
     @NonNull
-    @ColumnInfo(name = "address")
-    private String address;
+    @ColumnInfo(name = "street")
+    private String street;
+
+    @ColumnInfo(name = "city")
+    private String city;
+
+
+    @ColumnInfo(name = "wage")
+    private String wage;
 
     @NonNull
     @ColumnInfo(name = "password")
     private String password;
 
-    @NonNull
-    @ColumnInfo(name = "city")
-    private String city;
 
-    @NonNull
-    @ColumnInfo(name = "chargesPerHours")
-    private double chargesPerHours;
-
-    @NonNull
-    @ColumnInfo(name = "images")
-    private String images;
-
-    @NonNull
     @ColumnInfo(name = "description")
     private String description;
+//    public ServiceProvider(@NonNull String serviceProvider, String age, String occupation) {
+//        this.serviceProvider = serviceProvider;
+//        this.age = age;
+//        this.occupation = occupation;
+//    }
+
 
     public ServiceProvider() {
     }
 
-    public ServiceProvider(@NonNull String serviceProvider, int age, @NonNull String occupation, @NonNull String email, @NonNull String phone, @NonNull String address, @NonNull String password, @NonNull String city, double chargesPerHours, @NonNull String images, @NonNull String description) {
+
+
+    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description) {
         this.serviceProvider = serviceProvider;
         this.age = age;
         this.occupation = occupation;
         this.email = email;
         this.phone = phone;
-        this.address = address;
-        this.password = password;
+        this.street = street;
         this.city = city;
-        this.chargesPerHours = chargesPerHours;
-        this.images = images;
+        this.wage = wage;
+        this.password = password;
         this.description = description;
     }
 
@@ -80,11 +81,12 @@ public class ServiceProvider {
         this.serviceProvider = serviceProvider;
     }
 
-    public int getAge() {
+    @NonNull
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(@NonNull String age) {
         this.age = age;
     }
 
@@ -97,31 +99,45 @@ public class ServiceProvider {
         this.occupation = occupation;
     }
 
-    @NonNull
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(@NonNull String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    @NonNull
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(@NonNull String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
     @NonNull
-    public String getAddress() {
-        return address;
+    public String getStreet() {
+        return street;
     }
 
-    public void setAddress(@NonNull String address) {
-        this.address = address;
+    public void setStreet(@NonNull String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getWage() {
+        return wage;
+    }
+
+    public void setWage(String wage) {
+        this.wage = wage;
     }
 
     @NonNull
@@ -133,38 +149,11 @@ public class ServiceProvider {
         this.password = password;
     }
 
-    @NonNull
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(@NonNull String city) {
-        this.city = city;
-    }
-
-    public double getChargesPerHours() {
-        return chargesPerHours;
-    }
-
-    public void setChargesPerHours(double chargesPerHours) {
-        this.chargesPerHours = chargesPerHours;
-    }
-
-    @NonNull
-    public String getImages() {
-        return images;
-    }
-
-    public void setImages(@NonNull String images) {
-        this.images = images;
-    }
-
-    @NonNull
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(@NonNull String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }
