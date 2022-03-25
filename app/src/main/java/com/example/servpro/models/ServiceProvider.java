@@ -50,10 +50,14 @@ public class ServiceProvider {
     @ColumnInfo(name = "images")
     private String images;
 
+    @NonNull
+    @ColumnInfo(name = "description")
+    private String description;
+
     public ServiceProvider() {
     }
 
-    public ServiceProvider(@NonNull String serviceProvider, int age, @NonNull String occupation, @NonNull String email, @NonNull String phone, @NonNull String address, @NonNull String password, @NonNull String city, double chargesPerHours, @NonNull String images) {
+    public ServiceProvider(@NonNull String serviceProvider, int age, @NonNull String occupation, @NonNull String email, @NonNull String phone, @NonNull String address, @NonNull String password, @NonNull String city, double chargesPerHours, @NonNull String images, @NonNull String description) {
         this.serviceProvider = serviceProvider;
         this.age = age;
         this.occupation = occupation;
@@ -64,6 +68,7 @@ public class ServiceProvider {
         this.city = city;
         this.chargesPerHours = chargesPerHours;
         this.images = images;
+        this.description = description;
     }
 
     @NonNull
@@ -154,5 +159,12 @@ public class ServiceProvider {
         this.images = images;
     }
 
+    @NonNull
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(@NonNull String description) {
+        this.description = description;
+    }
 }

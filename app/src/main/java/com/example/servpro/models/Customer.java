@@ -30,16 +30,20 @@ public class Customer {
     @ColumnInfo(name = "address")
     private String address;
 
-    public Customer(){
+    @NonNull
+    @ColumnInfo(name = "password")
+    private String password;
 
+    public Customer() {
     }
 
-    public Customer(@NonNull String customerName, int age, @NonNull String email, @NonNull String phone, @NonNull String address) {
+    public Customer(@NonNull String customerName, int age, @NonNull String email, @NonNull String phone, @NonNull String address, @NonNull String password) {
         this.customerName = customerName;
         this.age = age;
         this.email = email;
         this.phone = phone;
         this.address = address;
+        this.password = password;
     }
 
     @NonNull
@@ -84,5 +88,14 @@ public class Customer {
 
     public void setAddress(@NonNull String address) {
         this.address = address;
+    }
+
+    @NonNull
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NonNull String password) {
+        this.password = password;
     }
 }
