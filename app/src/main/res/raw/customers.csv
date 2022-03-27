@@ -1,5 +1,4 @@
-﻿CustomerName,Age,Email,Phone,Address,Password
-Karanpreet,22,karanpreet@gmail.com,(909)-898-2345,"54 cambir street, Vancouver",karan@123
-Peter,23,peter123@gmail.com,(659)-898-2963,"6589 glassmere street, Burnaby",peter@123
-Smith,43,smith_michal@gmail.com,(658)-898-2987,"5035 cammon street, Surry",smith@123
-Love,32,love_your@gmail.com,(604)-898-2159,"5678 mainsland Street, Vancouver",love@123
+Id,Name,Department
+Karanpreet,21,preetKaran@gmail.com,6598565856,909 welcome st Vancouver,karan@123
+Tashmeet,22,tashMeet@gmail.com,6598500000,109 elson st Vancouver,tashmeet@123
+Rohan,24,rohanSharma@gmail.com,6500065856,4501St 100Ave Surrey,rohan@123
