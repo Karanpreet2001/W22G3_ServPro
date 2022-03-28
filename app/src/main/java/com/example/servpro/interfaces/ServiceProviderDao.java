@@ -22,6 +22,6 @@ public interface ServiceProviderDao {
 
     @Query("SELECT * from serviceProvider where city=(:city) and occupation=(:service)")
     List<ServiceProvider> getServiceProviderAccordingly(String city, String service);
-
+// ggnfj
 
 }
