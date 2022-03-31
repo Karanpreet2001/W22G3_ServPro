@@ -75,7 +75,14 @@ public class ServicesActivity extends AppCompatActivity {
                         Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
                         Bundle b = new Bundle();
                         b.putString("NAME",extractList.get(index).getServiceProvider());
-
+                        b.putString("AGE", extractList.get(index).getAge());
+                        b.putString("OCCU", extractList.get(index).getOccupation());
+                        b.putString("EMAIL", extractList.get(index).getEmail());
+                        b.putString("PHONE", extractList.get(index).getPhone());
+                        b.putString("ADDRESS", extractList.get(index).getStreet());
+                        b.putString("CITY", extractList.get(index).getCity());
+                        b.putString("WAGE", extractList.get(index).getWage());
+                        b.putString("DESCRIPTION", extractList.get(index).getDescription());
 
                         result.putExtras(b);
                         startActivity(result);

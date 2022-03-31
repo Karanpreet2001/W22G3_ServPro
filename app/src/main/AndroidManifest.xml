@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServPro">
         <activity
+            android:name=".ServProAddNewService"
+            android:exported="false" />
+        <activity
+            android:name=".ServProAllDeals"
+            android:exported="false" />
+        <activity
+            android:name=".ServProAllServices"
+            android:exported="false" />
+        <activity
+            android:name=".ServProProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -44,9 +56,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" />
 
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

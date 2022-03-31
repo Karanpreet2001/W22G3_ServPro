@@ -44,9 +44,10 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/txt_service_email"
+            android:id="@+id/txt_service_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
@@ -55,14 +56,32 @@
             app:layout_constraintVertical_bias="0.041" />
 
         <TextView
-            android:id="@+id/text_service_wage"
+            android:id="@+id/text_service_occupation"
             android:layout_width="64dp"
             android:layout_height="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_service_email"
-            app:layout_constraintVertical_bias="0.071" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_service_age" />
+
+        <TextView
+            android:id="@+id/txt_service_description2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_service_wage" />
+
+        <TextView
+            android:id="@+id/txt_service_wage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_service_occupation" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

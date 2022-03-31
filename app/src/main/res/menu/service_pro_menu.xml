@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/mainPage"
+        android:icon="@drawable/ic_baseline_person_pin_24"
+        android:title="View all service"
+        app:showAsAction = "ifRoom"/>
+
+    <item android:id="@+id/allServices"
+        android:title="View all service"
+        app:showAsAction = "never"/>
+
+    <item android:id="@+id/addNewService"
+        android:title="Add new service"
+        app:showAsAction = "never"/>
+
+    <item android:id="@+id/seeAllDeals"
+        android:title="Deals"
+        app:showAsAction = "never"/>
+
+
+
+
+
+
+</menu>
