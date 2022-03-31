@@ -36,6 +36,7 @@ public class ServiceDetails extends AppCompatActivity {
 
         btnToContact = findViewById(R.id.btnToContact);
 
+        //new
         btnToContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
