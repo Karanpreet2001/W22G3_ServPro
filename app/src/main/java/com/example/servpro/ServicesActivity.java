@@ -49,6 +49,8 @@ public class ServicesActivity extends AppCompatActivity {
 
         shimmerFrameLayout.startShimmer();
 
+        //
+
 
 
         Bundle b1= getIntent().getExtras();
