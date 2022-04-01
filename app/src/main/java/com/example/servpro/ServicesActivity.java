@@ -51,7 +51,7 @@ public class ServicesActivity extends AppCompatActivity {
         recyclerViewServices.setLayoutManager(ln);
 
 
-        List<ServiceProvider> serviceProviderList = readAllServiceProviders();
+
 
         servPro = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
         serviceProviderDao= servPro.serviceProviderDao();
@@ -61,7 +61,7 @@ public class ServicesActivity extends AppCompatActivity {
 
         executorService.execute(() ->{
 
-            serviceProviderDao.insertIntoServiceProvider(serviceProviderList);
+
              extractList = serviceProviderDao.getServiceProviderAccordingly(city, service);
 
 

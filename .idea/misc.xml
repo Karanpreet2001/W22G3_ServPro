@@ -14,7 +14,8 @@
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.23777173913043478" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_add_new_service.xml" value="0.1171875" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_deals.xml" value="0.103125" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.103125" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.264" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_edit.xml" value="0.176" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_profile.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_service_details.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_services.xml" value="0.24635416666666668" />
@@ -23,6 +24,7 @@
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/dialogbox_layout.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/fragment_contact.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_all_services.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_row.xml" value="0.2" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/menu/service_pro_menu.xml" value="0.25" />
       </map>

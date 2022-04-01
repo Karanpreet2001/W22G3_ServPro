@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtEmailOfServPro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textServProName" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txtPhoneOfServPro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -39,7 +39,7 @@
         android:textSize="24sp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailOfServPro" />
 
     <TextView
         android:id="@+id/textView8"
@@ -67,28 +67,31 @@
         android:id="@+id/noOfServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmailOfServPro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textServProName"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <TextView
         android:id="@+id/txtClickHere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="@string/textClickToView"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noOfServices" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnViewAllServices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Button"
+        android:text="@string/btnViewAllServices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/txtClickHere"

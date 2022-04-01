@@ -1,6 +1,5 @@
 package com.example.servpro.adapters;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +20,9 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
 
     OnClickItem onClickItemListener;
 
-    public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItem) {
+    public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItemListener) {
         this.serviceProviderList = serviceProviderList;
-        this.onClickItemListener = onClickItem;
+        this.onClickItemListener = onClickItemListener;
     }
 
     @NonNull
@@ -44,6 +43,8 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
             onClickItemListener.onClickItem(sph.getAdapterPosition());
 
         });
+
+
 
         return sph;
     }
