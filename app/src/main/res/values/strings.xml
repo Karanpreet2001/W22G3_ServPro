@@ -36,6 +36,10 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="txtEmail">Email</string>
+    <string name="textClickToView">Click Here All To See</string>
+    <string name="btnViewAllServices">All Services</string>
 
 </resources>

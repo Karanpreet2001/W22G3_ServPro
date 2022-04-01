@@ -11,7 +11,9 @@ import android.widget.Button;
 
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.interfaces.CustomerDao;
+import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.Customer;
+import com.example.servpro.models.ServiceProvider;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,12 +29,14 @@ public class SplashActivity extends AppCompatActivity {
     Button    btnStart;
     ServPro db;
     CustomerDao customerDao;
+    ServiceProviderDao serviceProviderDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
         List<Customer> customerList = readAllCustomers();
+        List<ServiceProvider> serviceProviderList = readAllServiceProviders();
 
         Log.d("customer", customerList.size()+"");
         btnStart = findViewById(R.id.btnStart1);
@@ -52,6 +56,10 @@ public class SplashActivity extends AppCompatActivity {
                 db = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
                 customerDao=  db.customerDao();
                 customerDao.insertIntoCustomer(customerList);
+
+
+                serviceProviderDao= db.serviceProviderDao();
+                serviceProviderDao.insertIntoServiceProvider(serviceProviderList);
 
 
             }
@@ -85,5 +93,32 @@ public class SplashActivity extends AppCompatActivity {
         return customerList;
     }
 
+    public List<ServiceProvider> readAllServiceProviders(){
+        List<ServiceProvider> allServicePro= new ArrayList<>();
+
+        InputStream inputStream = getResources().openRawResource((R.raw.students));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        try{
+            String studentLine= reader.readLine();
+
+            while((studentLine= reader.readLine())!=null){
+
+                String[] eachStudent = studentLine.split(",");
+                ServiceProvider forStudent = new ServiceProvider(eachStudent[0], eachStudent[1], eachStudent[2],eachStudent[3],eachStudent[4],eachStudent[5],eachStudent[6],eachStudent[7],eachStudent[8],eachStudent[9]);
+
+                allServicePro.add(forStudent);
+            }
+
+
+
+            Log.d("SIZE", allServicePro.size()+"");
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+
+        return  allServicePro;
+    }
 
 }
