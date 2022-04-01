@@ -10,18 +10,22 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
+//import android.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.servpro.adapters.ServicesRecyclerView;
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.ServiceProvider;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -33,12 +37,19 @@ public class ServicesActivity extends AppCompatActivity {
     ServPro servPro;
     ServiceProviderDao serviceProviderDao;
     List<ServiceProvider> extractList = new ArrayList<>();
-
+    ServicesRecyclerView servicesRecyclerView;
+    ShimmerFrameLayout shimmerFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
+
+        shimmerFrameLayout = findViewById(R.id.shimmer);
+
+        shimmerFrameLayout.startShimmer();
+
+
 
         Bundle b1= getIntent().getExtras();
         String city = b1.getString("CITY");
@@ -68,7 +79,8 @@ public class ServicesActivity extends AppCompatActivity {
 
 
             runOnUiThread(() -> {
-                recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
+
+                 servicesRecyclerView = new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
                     @Override
                     public void onClickItem(int index) {
 
@@ -87,7 +99,14 @@ public class ServicesActivity extends AppCompatActivity {
                         result.putExtras(b);
                         startActivity(result);
                     }
-                }));
+                });
+
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
+                recyclerViewServices.setVisibility(View.VISIBLE);
+
+
+                recyclerViewServices.setAdapter(servicesRecyclerView);
             });
 
 
@@ -101,33 +120,28 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
 
-    public List<ServiceProvider> readAllServiceProviders(){
-        List<ServiceProvider> allServicePro= new ArrayList<>();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-        InputStream inputStream = getResources().openRawResource((R.raw.students));
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_serachbar, menu);
 
-        try{
-            String studentLine= reader.readLine();
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
 
-            while((studentLine= reader.readLine())!=null){
-
-                String[] eachStudent = studentLine.split(",");
-                ServiceProvider forStudent = new ServiceProvider(eachStudent[0], eachStudent[1], eachStudent[2],eachStudent[3],eachStudent[4],eachStudent[5],eachStudent[6],eachStudent[7],eachStudent[8],eachStudent[9]);
-
-                allServicePro.add(forStudent);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
             }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                servicesRecyclerView.getFilter().filter(s);
+                return false;
+            }
+        });
 
-
-            Log.d("SIZE", allServicePro.size()+"");
-
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
-
-        return  allServicePro;
+        return  true;
     }
-
-
 }

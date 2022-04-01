@@ -3,6 +3,8 @@ package com.example.servpro.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,17 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.servpro.R;
 import com.example.servpro.models.ServiceProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerView.ServiceProviderHolder> {
+public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerView.ServiceProviderHolder> implements Filterable {
 
     List<ServiceProvider> serviceProviderList;
+    List<ServiceProvider> serviceProviderListFull;
 
     OnClickItem onClickItemListener;
 
     public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItemListener) {
         this.serviceProviderList = serviceProviderList;
         this.onClickItemListener = onClickItemListener;
+        serviceProviderListFull= new ArrayList<>(serviceProviderList);
     }
 
     @NonNull
@@ -62,6 +67,43 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
     public int getItemCount() {
         return serviceProviderList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return runFilterable;
+    }
+
+    private Filter runFilterable = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<ServiceProvider> filteredList = new ArrayList<>();
+
+            if(charSequence==null || charSequence.length()==0){
+                filteredList.addAll(serviceProviderListFull);
+            }else{
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (ServiceProvider sp : serviceProviderListFull){
+                    if(sp.getServiceProvider().toLowerCase().contains(filterPattern)){
+                        filteredList.add(sp);
+                    }
+                }
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values=filteredList;
+
+            return  filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            serviceProviderList.clear();
+            serviceProviderList.addAll((List)filterResults.values);
+            notifyDataSetChanged();
+
+        }
+    };
 
     public class ServiceProviderHolder extends RecyclerView.ViewHolder{
 
