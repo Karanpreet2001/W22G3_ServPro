@@ -60,8 +60,14 @@ public class ContactFragment extends Fragment {
         txtPhone.setText(phone);
         txtAddress.setText(address+", "+city);
 
+        btnToConnect.setOnClickListener((View vie)-> {
+
+
+        });
 
         return  binding.getRoot();
+
+
 
 
     }

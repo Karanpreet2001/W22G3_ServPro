@@ -51,7 +51,7 @@ public class ServProProfileActivity extends AppCompatActivity {
         txtPhone= binding.txtPhoneOfServPro;
         btnToViewAllServices = binding.btnViewAllServices;
 
-         username = "peterGabri@gmail.com";
+         username = "harmanSingh@gmail.com";
 
         db= Room.databaseBuilder(getApplicationContext(), ServPro.class, "servpro.db").build();
 
@@ -102,6 +102,10 @@ public class ServProProfileActivity extends AppCompatActivity {
             case R.id.seeAllDeals:
                 startActivity(new Intent(ServProProfileActivity.this, ServProAllDeals.class));
                         return true;
+
+            case R.id.allConnections:
+                startActivity(new Intent(ServProProfileActivity.this, ConnectionActivity.class));
+                return true;
 
             case R.id.addNewService:
                 startActivity(new Intent(ServProProfileActivity.this, ServProAddNewService.class));

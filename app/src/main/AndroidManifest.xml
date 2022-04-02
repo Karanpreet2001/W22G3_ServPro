@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServPro">
         <activity
+            android:name=".ViewConnectionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConnectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ServProEditActivity"
             android:exported="false" />
         <activity

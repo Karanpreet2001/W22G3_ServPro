@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.servpro.databases.ServPro;
+import com.example.servpro.interfaces.ConnectionDao;
 import com.example.servpro.interfaces.CustomerDao;
 import com.example.servpro.interfaces.ServiceProviderDao;
+import com.example.servpro.models.Connection;
 import com.example.servpro.models.Customer;
 import com.example.servpro.models.ServiceProvider;
 
@@ -30,6 +32,10 @@ public class SplashActivity extends AppCompatActivity {
     ServPro db;
     CustomerDao customerDao;
     ServiceProviderDao serviceProviderDao;
+    ConnectionDao connectionDao;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,7 @@ public class SplashActivity extends AppCompatActivity {
 
         List<Customer> customerList = readAllCustomers();
         List<ServiceProvider> serviceProviderList = readAllServiceProviders();
+        List<Connection> connectionList = readAllConnection();
 
         Log.d("customer", customerList.size()+"");
         btnStart = findViewById(R.id.btnStart1);
@@ -60,6 +67,9 @@ public class SplashActivity extends AppCompatActivity {
 
                 serviceProviderDao= db.serviceProviderDao();
                 serviceProviderDao.insertIntoServiceProvider(serviceProviderList);
+
+                connectionDao = db.connectionDao();
+                connectionDao.insertConnections(connectionList);
 
 
             }
@@ -121,4 +131,32 @@ public class SplashActivity extends AppCompatActivity {
         return  allServicePro;
     }
 
+
+    public List<Connection> readAllConnection(){
+        List<Connection> allConnection= new ArrayList<>();
+
+        InputStream inputStream = getResources().openRawResource((R.raw.connections));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+        try{
+            String connectionLine= reader.readLine();
+
+            while((connectionLine= reader.readLine())!=null){
+
+                String[] eachConnection = connectionLine.split(",");
+                Connection forConnect = new Connection(eachConnection[0], eachConnection[1], eachConnection[2],eachConnection[3]);
+
+                allConnection.add(forConnect);
+            }
+
+
+
+            Log.d("SIZE", allConnection.size()+"");
+
+        }catch (IOException ex){
+            ex.printStackTrace();
+        }
+
+        return  allConnection;
+    }
 }
