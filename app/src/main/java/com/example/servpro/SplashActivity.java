@@ -68,7 +68,7 @@ public class SplashActivity extends AppCompatActivity {
            @Override
            public void onTransitionCompleted(MotionLayout motionLayout, int currentId) {
 
-               startActivity(new Intent(SplashActivity.this, MainActivity.class));
+               startActivity(new Intent(SplashActivity.this, Login2Activity.class));
            }
 
            @Override

@@ -1,14 +1,23 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityLogin2Binding;
+import com.example.servpro.interfaces.CustomerDao;
+import com.example.servpro.interfaces.ServiceProviderDao;
+import com.example.servpro.models.Customer;
+import com.example.servpro.models.ServiceProvider;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -16,11 +25,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Login2Activity extends AppCompatActivity {
 
+    String email;
+    String password;
     ActivityLogin2Binding binding;
     Button btnViewServiceProvider ,   btnGoogle;
     private static final int RC_SIGN_IN = 1;
+    ServPro db;
+    ServiceProviderDao serviceProviderDao;
+    CustomerDao customerDao;
+    String selection="C";
+    boolean bool= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +49,81 @@ public class Login2Activity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         btnViewServiceProvider = binding.btnViewProfile;
+        EditText txtEmail = binding.editTextEmail;
+        EditText txtPassword= binding.editTextPassword;
+        CheckBox check = binding.checkBox;
 
-        btnViewServiceProvider.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
+
+
+
+
+
+        db = Room.databaseBuilder(getApplicationContext(), ServPro.class, "servpro.db").build();
+        serviceProviderDao = db.serviceProviderDao();
+        customerDao = db.customerDao();
+
+
+
+
+        btnViewServiceProvider.setOnClickListener((View view)-> {
+
+            email = txtEmail.getText().toString().trim();
+            password = txtPassword.getText().toString().trim();
+            Toast.makeText(Login2Activity.this, email + " "+password+" "+selection, Toast.LENGTH_SHORT).show();
+
+            if(check.isChecked()){
+                selection = "S";
+
             }
+
+            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+
+
+                    if(selection =="S"){
+                        List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
+
+                        for(int i = 0; i<allServiceProvider.size();i++){
+                            Log.d("CHECK", allServiceProvider.get(i).getEmail());
+                            if(email.equals(allServiceProvider.get(i).getEmail())||password.equals(allServiceProvider.get(i).getPassword())){
+                                bool = true;
+                                break;
+                            }
+                        }
+                    }
+                    if(selection=="C"){
+                        List<Customer> allCustomer = customerDao.getAllCustomer();
+                        for(int i = 0; i<allCustomer.size();i++){
+                            Log.d("CHECK", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
+
+                            if(email.equals(allCustomer.get(i).getEmail()) ||password.equals(allCustomer.get(i).getPassword())){
+                                bool = true;
+                                Toast.makeText(Login2Activity.this, "True", Toast.LENGTH_SHORT).show();
+                                break;
+                            }
+                        }
+                    }
+                }
+            });
+
+
+
+
+
+            if(bool==true){
+                if(selection.equals("S")){
+                    startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
+                }else{
+                    startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
+                }
+            }else{
+                Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+            }
+
+
+
         });
 
         // Google Sign in
@@ -93,9 +182,7 @@ public class Login2Activity extends AppCompatActivity {
             // Signed in successfully, show authenticated UI.
 
         } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            //Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+
 
         }
     }

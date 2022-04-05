@@ -13,31 +13,32 @@ public class Customer {
     @ColumnInfo(name = "customerName")
     private String customerName;
 
-    @NonNull
+
     @ColumnInfo(name = "age")
     private int age;
+
 
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "email")
     private String email;
 
-    @NonNull
+
     @ColumnInfo(name = "phone")
     private String phone;
 
-    @NonNull
+
     @ColumnInfo(name = "address")
     private String address;
 
-    @NonNull
+
     @ColumnInfo(name = "password")
     private String password;
 
     public Customer() {
     }
 
-    public Customer(@NonNull String customerName, int age, @NonNull String email, @NonNull String phone, @NonNull String address, @NonNull String password) {
+    public Customer(@NonNull String customerName, int age, @NonNull String email, String phone, String address, String password) {
         this.customerName = customerName;
         this.age = age;
         this.email = email;
@@ -72,30 +73,27 @@ public class Customer {
         this.email = email;
     }
 
-    @NonNull
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(@NonNull String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    @NonNull
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(@NonNull String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    @NonNull
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(@NonNull String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }

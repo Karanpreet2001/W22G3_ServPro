@@ -46,9 +46,9 @@ public class ServiceProvider {
     @ColumnInfo(name = "password")
     private String password;
 
-    @NonNull
-    @ColumnInfo(name= "image")
-    private Blob image;
+//    @NonNull
+//    @ColumnInfo(name= "image")
+//    private Blob image;
 
 
     @ColumnInfo(name = "description")
