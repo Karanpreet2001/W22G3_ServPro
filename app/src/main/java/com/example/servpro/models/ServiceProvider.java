@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.sql.Blob;
+
 @Entity(tableName = "serviceProvider")
 public class ServiceProvider {
 
@@ -43,6 +45,10 @@ public class ServiceProvider {
     @NonNull
     @ColumnInfo(name = "password")
     private String password;
+
+    @NonNull
+    @ColumnInfo(name= "image")
+    private Blob image;
 
 
     @ColumnInfo(name = "description")

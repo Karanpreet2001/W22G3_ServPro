@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnUploadImage"
         android:layout_width="129dp"
         android:layout_height="63dp"
         android:layout_marginTop="20dp"
