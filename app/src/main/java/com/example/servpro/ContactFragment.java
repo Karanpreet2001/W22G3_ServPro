@@ -1,5 +1,6 @@
 package com.example.servpro;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -62,6 +63,18 @@ public class ContactFragment extends Fragment {
 
         btnToConnect.setOnClickListener((View vie)-> {
 
+
+        });
+        btnSendAMessage.setOnClickListener((View vie)-> {
+
+            Intent intent = new Intent(getActivity(), FixADealActivity.class);
+            Bundle b = new Bundle();
+
+            b.putString("CostEmail","karanpreet@gmail.com");
+            b.putString("ServEmail", email);
+
+            intent.putExtras(b);
+            startActivity(intent);
 
         });
 

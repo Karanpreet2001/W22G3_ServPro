@@ -1,6 +1,7 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -33,6 +34,7 @@ public class SplashActivity extends AppCompatActivity {
     CustomerDao customerDao;
     ServiceProviderDao serviceProviderDao;
     ConnectionDao connectionDao;
+    MotionLayout motionLayout;
 
 
 
@@ -46,14 +48,34 @@ public class SplashActivity extends AppCompatActivity {
         List<Connection> connectionList = readAllConnection();
 
         Log.d("customer", customerList.size()+"");
-        btnStart = findViewById(R.id.btnStart1);
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            }
-        });
+
+        motionLayout = findViewById(R.id.motionLay);
+        motionLayout.startLayoutAnimation();
+
+
+       motionLayout.setTransitionListener(new MotionLayout.TransitionListener() {
+           @Override
+           public void onTransitionStarted(MotionLayout motionLayout, int startId, int endId) {
+
+           }
+
+           @Override
+           public void onTransitionChange(MotionLayout motionLayout, int startId, int endId, float progress) {
+
+           }
+
+           @Override
+           public void onTransitionCompleted(MotionLayout motionLayout, int currentId) {
+
+               startActivity(new Intent(SplashActivity.this, MainActivity.class));
+           }
+
+           @Override
+           public void onTransitionTrigger(MotionLayout motionLayout, int triggerId, boolean positive, float progress) {
+
+           }
+       });
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
