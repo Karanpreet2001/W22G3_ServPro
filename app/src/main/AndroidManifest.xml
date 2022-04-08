@@ -10,21 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServPro">
         <activity
-            android:name=".CustomerRegistrationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ServProAllDealsDetails"
-            android:exported="false" />
-        <activity
-            android:name=".FixADealActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ViewConnectionDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ConnectionActivity"
-            android:exported="false" />
-        <activity
             android:name=".ServProEditActivity"
             android:exported="false" />
         <activity
