@@ -41,5 +41,6 @@
     <string name="txtEmail">Email</string>
     <string name="textClickToView">Click Here All To See</string>
     <string name="btnViewAllServices">All Services</string>
+    <string name="google_map_key">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
 
 </resources>

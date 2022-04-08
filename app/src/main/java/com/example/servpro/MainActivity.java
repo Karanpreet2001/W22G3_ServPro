@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogIn.setOnClickListener((View view)-> {
 
-            startActivity(new Intent(MainActivity.this,LogInActivity.class));
+            startActivity(new Intent(MainActivity.this,googleMaps.class));
         });
 
     }
