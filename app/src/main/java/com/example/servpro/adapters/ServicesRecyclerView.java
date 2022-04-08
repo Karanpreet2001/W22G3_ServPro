@@ -43,6 +43,7 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
         sph.txtProCity = view.findViewById(R.id.txtProCity);
         sph.txtProWage = view.findViewById(R.id.txtProWage);
         sph.txtProPhone = view.findViewById(R.id.txtProPhone);
+        sph.imgViewSerPro=view.findViewById(R.id.imgViewSerPro);
 
         sph.itemView.setOnClickListener((View vie)-> {
             onClickItemListener.onClickItem(sph.getAdapterPosition());
@@ -61,6 +62,7 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
         holder.txtProName.setText(serviceProviderList.get(i).getServiceProvider());
         holder.txtProCity.setText(serviceProviderList.get(i).getCity());
         holder.txtProWage.setText(serviceProviderList.get(i).getWage());
+        holder.imgViewSerPro.setImageResource(serviceProviderList.get(i).getImages());
 //        holder.imgViewSerPro.set
     }
 

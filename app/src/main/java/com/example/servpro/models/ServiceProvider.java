@@ -54,13 +54,29 @@ public class ServiceProvider {
     @ColumnInfo(name = "description")
     private String description;
 
+    @ColumnInfo(name = "image")
+    private int images;
+
 
 
     public ServiceProvider() {
     }
 
 
-    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description) {
+//    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description) {
+//        this.serviceProvider = serviceProvider;
+//        this.age = age;
+//        this.occupation = occupation;
+//        this.email = email;
+//        this.phone = phone;
+//        this.street = street;
+//        this.city = city;
+//        this.wage = wage;
+//        this.password = password;
+//        this.description = description;
+//    }
+
+    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, @NonNull String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description, int images) {
         this.serviceProvider = serviceProvider;
         this.age = age;
         this.occupation = occupation;
@@ -71,6 +87,15 @@ public class ServiceProvider {
         this.wage = wage;
         this.password = password;
         this.description = description;
+        this.images = images;
+    }
+
+    public int getImages() {
+        return images;
+    }
+
+    public void setImages(int images) {
+        this.images = images;
     }
 
     @NonNull

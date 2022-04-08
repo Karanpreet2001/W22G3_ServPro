@@ -51,7 +51,6 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
             }
         });
 
-        db = Room.databaseBuilder(getApplicationContext(), ServPro.class, "servpro.db").build();
 
 
         btnRegistor.setOnClickListener(new View.OnClickListener() {
@@ -74,26 +73,6 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
                     servProViewModel = new ViewModelProvider(CustomerRegistrationActivity.this).get(ServProViewModel.class);
                     servProViewModel.insert(customer);
                     Toast.makeText(CustomerRegistrationActivity.this, "You are registered", Toast.LENGTH_SHORT).show();
-
-
-//                    ExecutorService executorService = Executors.newSingleThreadExecutor();
-//
-//                    executorService.execute(new Runnable() {
-//                        @Override
-//                        public void run() {
-//
-//                            db.customerDao().insertCustomer(customer);
-//
-//                            runOnUiThread(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    Toast.makeText(CustomerRegistrationActivity.this, "You are register", Toast.LENGTH_SHORT).show();
-//                                }
-//                            });
-//
-//
-//                        }
-//                    });
 
 
                 }else{

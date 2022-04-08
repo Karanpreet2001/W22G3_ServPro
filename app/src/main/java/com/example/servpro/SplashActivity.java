@@ -125,33 +125,33 @@ public class SplashActivity extends AppCompatActivity {
         return customerList;
     }
 
-    public List<ServiceProvider> readAllServiceProviders(){
-        List<ServiceProvider> allServicePro= new ArrayList<>();
-
-        InputStream inputStream = getResources().openRawResource((R.raw.students));
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        try{
-            String studentLine= reader.readLine();
-
-            while((studentLine= reader.readLine())!=null){
-
-                String[] eachStudent = studentLine.split(",");
-                ServiceProvider forStudent = new ServiceProvider(eachStudent[0], eachStudent[1], eachStudent[2],eachStudent[3],eachStudent[4],eachStudent[5],eachStudent[6],eachStudent[7],eachStudent[8],eachStudent[9]);
-
-                allServicePro.add(forStudent);
-            }
-
-
-
-            Log.d("SIZE", allServicePro.size()+"");
-
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
-
-        return  allServicePro;
-    }
+//    public List<ServiceProvider> readAllServiceProviders(){
+//        List<ServiceProvider> allServicePro= new ArrayList<>();
+//
+//        InputStream inputStream = getResources().openRawResource((R.raw.students));
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+//
+//        try{
+//            String studentLine= reader.readLine();
+//
+//            while((studentLine= reader.readLine())!=null){
+//
+//                String[] eachStudent = studentLine.split(",");
+//                ServiceProvider forStudent = new ServiceProvider(eachStudent[0], eachStudent[1], eachStudent[2],eachStudent[3],eachStudent[4],eachStudent[5],eachStudent[6],eachStudent[7],eachStudent[8],eachStudent[9]);
+//
+//                allServicePro.add(forStudent);
+//            }
+//
+//
+//
+//            Log.d("SIZE", allServicePro.size()+"");
+//
+//        }catch (IOException ex){
+//            ex.printStackTrace();
+//        }
+//
+//        return  allServicePro;
+//    }
 
 
     public List<Connection> readAllConnection(){

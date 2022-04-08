@@ -74,7 +74,7 @@ public class ServProEditActivity extends AppCompatActivity {
             wage = editWage.getText().toString();
             street = editStreet.getText().toString();
 
-            ServiceProvider s = new ServiceProvider(name, age, occupation, email,phone,  street,  city,  wage,password,description  );
+            ServiceProvider s = new ServiceProvider(name, age, occupation, email,phone,  street,  city,  wage,password,description,0  );
 
             ServProViewModel  servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
             servProViewModel.servProUpdate(s);
@@ -85,7 +85,7 @@ public class ServProEditActivity extends AppCompatActivity {
 
         btnToDelete.setOnClickListener((View view)-> {
 
-            ServiceProvider s = new ServiceProvider(name, age, occupation, email,phone,  street,  city,  wage,password,description  );
+            ServiceProvider s = new ServiceProvider(name, age, occupation, email,phone,  street,  city,  wage,password,description ,0 );
 
 
             ServProViewModel  servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);

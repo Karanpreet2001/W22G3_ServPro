@@ -28,7 +28,7 @@ public class FixADealActivity extends AppCompatActivity {
     String selectedDate;
     EditText editMessage;
     String msg;
-    ServPro db ;
+    ServPro db;
     ServProViewModel servProViewModel;
 
     @Override
@@ -47,15 +47,13 @@ public class FixADealActivity extends AppCompatActivity {
         Button btnMakeADeal = binding.btnMakeADeal;
         editMessage = binding.editTextMessage;
 
-        db = Room.databaseBuilder(getApplicationContext(), ServPro.class,"servpro.db").build();
-
-        MaterialDatePicker materialDatePicker = MaterialDatePicker.Builder.dateRangePicker().setSelection(Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(),MaterialDatePicker.todayInUtcMilliseconds())).build();
+        MaterialDatePicker materialDatePicker = MaterialDatePicker.Builder.dateRangePicker().setSelection(Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
 
 
         btnSetDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                materialDatePicker.show(getSupportFragmentManager(),"Material_Range");
+                materialDatePicker.show(getSupportFragmentManager(), "Material_Range");
                 materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
                     @Override
                     public void onPositiveButtonClick(Object selection) {
@@ -67,26 +65,20 @@ public class FixADealActivity extends AppCompatActivity {
         });
 
 
+        btnMakeADeal.setOnClickListener((View vie) -> {
 
-
-
-        btnMakeADeal.setOnClickListener((View vie)-> {
-
-            if(!selectedDate.isEmpty()){
-                msg= editMessage.getText().toString();
-                Deals deal = new Deals(servEmail,costEmail,selectedDate,msg);
+            if (!selectedDate.isEmpty()) {
+                msg = editMessage.getText().toString();
+                Deals deal = new Deals(servEmail, costEmail, selectedDate, msg);
 
                 servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
                 servProViewModel.insert(deal);
-            }else{
+            } else {
                 Toast.makeText(FixADealActivity.this, "Please Select Date", Toast.LENGTH_SHORT).show();
             }
 
 
-
         });
-
-
 
 
     }
