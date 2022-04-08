@@ -43,11 +43,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        List<Customer> customerList = readAllCustomers();
-        List<ServiceProvider> serviceProviderList = readAllServiceProviders();
-        List<Connection> connectionList = readAllConnection();
+//        List<Customer> customerList = readAllCustomers();
+//        List<ServiceProvider> serviceProviderList = readAllServiceProviders();
+//        List<Connection> connectionList = readAllConnection();
 
-        Log.d("customer", customerList.size()+"");
+//        Log.d("customer", customerList.size()+"");
 
 
         motionLayout = findViewById(R.id.motionLay);
@@ -77,25 +77,25 @@ public class SplashActivity extends AppCompatActivity {
            }
        });
 
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                db = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
-                customerDao=  db.customerDao();
-                customerDao.insertIntoCustomer(customerList);
-
-
-                serviceProviderDao= db.serviceProviderDao();
-                serviceProviderDao.insertIntoServiceProvider(serviceProviderList);
-
-                connectionDao = db.connectionDao();
-                connectionDao.insertConnections(connectionList);
-
-
-            }
-        });
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//
+//        executorService.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                db = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
+//                customerDao=  db.customerDao();
+//                customerDao.insertIntoCustomer(customerList);
+//
+//
+//                serviceProviderDao= db.serviceProviderDao();
+//                serviceProviderDao.insertIntoServiceProvider(serviceProviderList);
+//
+//                connectionDao = db.connectionDao();
+//                connectionDao.insertConnections(connectionList);
+//
+//
+//            }
+//        });
     }
 
     public List<Customer> readAllCustomers() {

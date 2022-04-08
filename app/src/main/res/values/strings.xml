@@ -42,5 +42,7 @@
     <string name="textClickToView">Click Here All To See</string>
     <string name="btnViewAllServices">All Services</string>
     <string name="EmailHint">EMAIL ID</string>
+    <string name="txtSelectADate">Select a period</string>
+    <string name="txtTypeAMessage">Type A Message</string>
 
 </resources>

@@ -61,6 +61,7 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
         holder.txtProName.setText(serviceProviderList.get(i).getServiceProvider());
         holder.txtProCity.setText(serviceProviderList.get(i).getCity());
         holder.txtProWage.setText(serviceProviderList.get(i).getWage());
+//        holder.imgViewSerPro.set
     }
 
     @Override
