@@ -20,7 +20,7 @@ import com.example.servpro.models.Deals;
 import com.example.servpro.models.ServiceProvider;
 
 @Database(entities = {Customer.class, ServiceProvider.class, Connection.class,Deals.class}, version = 1, exportSchema = false)
-
+//kkkk
 
 public abstract class ServPro extends RoomDatabase {
 
