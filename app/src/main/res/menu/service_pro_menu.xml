@@ -15,6 +15,10 @@
         android:title="Add new service"
         app:showAsAction = "never"/>
 
+    <item android:id="@+id/allConnections"
+        android:title="All Connections"
+        app:showAsAction = "never"/>
+
     <item android:id="@+id/seeAllDeals"
         android:title="Deals"
         app:showAsAction = "never"/>

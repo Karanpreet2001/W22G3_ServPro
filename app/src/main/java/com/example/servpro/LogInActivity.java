@@ -79,13 +79,13 @@ public class LogInActivity extends AppCompatActivity {
 
         Dialog dialog;
         Button btnLogin = findViewById(R.id.btnAlreadyRegistered);
-        Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnRegister = findViewById(R.id.btnUploadImage);
 
 
         dialog = new Dialog(LogInActivity.this);
         dialog.setContentView(R.layout.dialogbox_layout);
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
-      dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setCancelable(false);
         dialog.getWindow().getAttributes().windowAnimations=R.style.animation;
         Button okey = dialog.findViewById(R.id.okayButton);

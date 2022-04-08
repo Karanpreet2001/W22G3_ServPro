@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             if(radGroupOption.getCheckedRadioButtonId()==-1){
                 Toast.makeText(MainActivity.this, "Please select one option to proceed", Toast.LENGTH_SHORT).show();
             }else if(radGroupOption.getCheckedRadioButtonId()==R.id.radBtnForService){
-                startActivity(new Intent(MainActivity.this, GetCityActivity.class));
+                startActivity(new Intent(MainActivity.this, Login2Activity.class));
             }else{
                 startActivity(new Intent(MainActivity.this, LogInActivity.class));
             }

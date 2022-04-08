@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "serviceProvider")
 public class ServiceProvider {
 
-    @PrimaryKey
+
     @NonNull
     @ColumnInfo(name = "serviceProvider")
     private String serviceProvider;
@@ -22,6 +22,8 @@ public class ServiceProvider {
     @ColumnInfo(name = "occupation")
     private String occupation;
 
+    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "email")
     private String email;
 
@@ -44,19 +46,18 @@ public class ServiceProvider {
     @ColumnInfo(name = "password")
     private String password;
 
+//    @NonNull
+//    @ColumnInfo(name= "image")
+//    private Blob image;
+
 
     @ColumnInfo(name = "description")
     private String description;
-//    public ServiceProvider(@NonNull String serviceProvider, String age, String occupation) {
-//        this.serviceProvider = serviceProvider;
-//        this.age = age;
-//        this.occupation = occupation;
-//    }
+
 
 
     public ServiceProvider() {
     }
-
 
 
     public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description) {
