@@ -25,7 +25,7 @@ public interface ServiceProviderDao {
     void insertIntoServiceProvider(List<ServiceProvider> serviceProviderList);
 
     @Query("SELECT * from serviceProvider ")
-    List<ServiceProvider> getServiceProviderAccordingToCAO();
+    LiveData<List<ServiceProvider>> getServiceProviderAccordingToCAO();
 
     @Query("SELECT * from serviceProvider where city=(:city) and occupation=(:service)")
     List<ServiceProvider> getServiceProviderAccordingly(String city, String service);
@@ -38,6 +38,8 @@ public interface ServiceProviderDao {
 
     @Query("Select * from serviceProvider where email = (:username)")
     LiveData<List<ServiceProvider>> getAllServPro(String username);
+
+
 
     @Query("Update serviceProvider set description = :description, street = :street, city = :city, wage =:wage where email=:email")
     int servProUpdate(String description, String street, String city, String wage, String email);

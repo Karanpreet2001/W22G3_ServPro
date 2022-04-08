@@ -30,9 +30,6 @@ public class ServProViewModel extends AndroidViewModel {
         return repository.getServices(city, service);
     }
 
-    public LiveData<List<Customer>> getCustomers(){
-        return  repository.getCustomers();
-    }
 
     public LiveData<List<Connection>> getConnections(String email){
         return repository.getConnections(email);
@@ -46,6 +43,10 @@ public class ServProViewModel extends AndroidViewModel {
     }
 
     public void delete(ServiceProvider serviceProvider){repository.delete(serviceProvider);}
+
+    public void insert(Customer customer){
+        repository.insert(customer);
+    }
 
     public void insert(Deals deals){
         repository.insert(deals);
@@ -62,6 +63,17 @@ public class ServProViewModel extends AndroidViewModel {
     public LiveData<List<ServiceProvider>> getAllServPro(String email){
         return repository.getAllServPro(email);
     }
+
+    public LiveData<List<ServiceProvider>> getServicePros(){
+        return repository.getServicePros();
+    }
+
+    public LiveData<List<Customer>> getCustomers(){
+        return  repository.getCustomers();
+    }
+
+
+
     public void servProUpdate(ServiceProvider serviceProvider){
         repository.update(serviceProvider);
     }

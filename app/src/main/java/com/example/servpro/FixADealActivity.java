@@ -72,11 +72,16 @@ public class FixADealActivity extends AppCompatActivity {
 
         btnMakeADeal.setOnClickListener((View vie)-> {
 
-            msg= editMessage.getText().toString();
-            Deals deal = new Deals(servEmail,costEmail,selectedDate,msg);
+            if(!selectedDate.isEmpty()){
+                msg= editMessage.getText().toString();
+                Deals deal = new Deals(servEmail,costEmail,selectedDate,msg);
 
-            servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
-            servProViewModel.insert(deal);
+                servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+                servProViewModel.insert(deal);
+            }else{
+                Toast.makeText(FixADealActivity.this, "Please Select Date", Toast.LENGTH_SHORT).show();
+            }
+
 
 
         });

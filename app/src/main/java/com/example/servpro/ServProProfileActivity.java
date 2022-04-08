@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityServProProfileBinding;
@@ -39,7 +40,8 @@ public class ServProProfileActivity extends AppCompatActivity {
     TextView txtEmail;
     TextView txtPhone;
     Button btnToViewAllServices;
-    String username;
+    String email;
+
     ServProViewModel servProViewModel;
 
     @Override
@@ -55,11 +57,12 @@ public class ServProProfileActivity extends AppCompatActivity {
         txtPhone= binding.txtPhoneOfServPro;
         btnToViewAllServices = binding.btnViewAllServices;
 
-         username = "harmanSingh@gmail.com";
+        Bundle b = getIntent().getExtras();
+        email = b.getString("USERNAME","error");
+        Toast.makeText(ServProProfileActivity.this, email, Toast.LENGTH_SHORT).show();
 
-        db= Room.databaseBuilder(getApplicationContext(), ServPro.class, "servpro.db").build();
 
-        serviceProviderDao = db.serviceProviderDao();
+
 
         btnToViewAllServices.setOnClickListener((View view)-> {
 
@@ -68,38 +71,16 @@ public class ServProProfileActivity extends AppCompatActivity {
 
 
         servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
-        servProViewModel.getServPro(username).observe(this, new Observer<List<ServiceProvider>>() {
+        servProViewModel.getAllServPro(email).observe(this, new Observer<List<ServiceProvider>>() {
             @Override
             public void onChanged(List<ServiceProvider> sp) {
 
-                int noOfServices = sp.size();
-
-
-        txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
+                txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
         txtPhone.setText(sp.get(0).getPhone());
         txtEmail.setText(sp.get(0).getEmail());
-        txtAllService.setText("You have "+noOfServices+" registered services");
+        txtAllService.setText("You have "+sp.size()+" registered services");
             }
         });
-
-
-//        ExecutorService executorService = Executors.newSingleThreadExecutor();
-//        executorService.execute(()-> {
-//
-//            List<ServiceProvider> sp = serviceProviderDao.getServProName(username);
-//
-//
-////
-//
-//            runOnUiThread(() ->{
-//
-//                txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
-//                txtPhone.setText(sp.get(0).getPhone());
-//                txtEmail.setText(sp.get(0).getEmail());
-//                txtAllService.setText("You have "+noOfServices+" registered services");
-//            });
-//        });
-
 
 
 
@@ -146,7 +127,7 @@ public class ServProProfileActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putString("USERNAME", username);
+        editor.putString("USERNAME", email);
         editor.commit();
     }
 }

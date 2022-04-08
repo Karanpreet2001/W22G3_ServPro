@@ -36,6 +36,10 @@ public class GetCityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_city);
 
+        Bundle b = new Bundle();
+        String username = b.getString("USERNAME", "error");
+        Toast.makeText(GetCityActivity.this, "username", Toast.LENGTH_SHORT).show();
+
    //     EditText editTextCity = findViewById(R.id.editTextCity);
        // Button btnNext = findViewById(R.id.btnNext);
 
@@ -52,6 +56,7 @@ public class GetCityActivity extends AppCompatActivity {
 
                 Bundle bundle = new Bundle();
                 bundle.putString("CITY", temp);
+                bundle.putString("EMAIL", username);
 
                 myRes.putExtras(bundle);
                 startActivity(myRes);

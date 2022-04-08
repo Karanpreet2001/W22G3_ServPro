@@ -1,6 +1,8 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -18,6 +20,7 @@ import com.example.servpro.interfaces.CustomerDao;
 import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.Customer;
 import com.example.servpro.models.ServiceProvider;
+import com.example.servpro.viewModel.ServProViewModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -36,12 +39,11 @@ public class Login2Activity extends AppCompatActivity {
     ActivityLogin2Binding binding;
     Button btnViewServiceProvider ,   btnGoogle;
     private static final int RC_SIGN_IN = 1;
-    ServPro db;
-    ServiceProviderDao serviceProviderDao;
-    CustomerDao customerDao;
+
     String selection="C";
     String TAG = "logintest";
     String flag = "F";
+    ServProViewModel servProViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,87 +55,111 @@ public class Login2Activity extends AppCompatActivity {
         EditText txtEmail = binding.editTextEmail;
         EditText txtPassword= binding.editTextPassword;
         CheckBox check = binding.checkBox;
+        Button btnToCustomerRegister = binding.btnCustomerRegistration;
+
+        btnToCustomerRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login2Activity.this, CustomerRegistrationActivity.class));
+            }
+        });
 
 
-
-
-
-
-        db = Room.databaseBuilder(getApplicationContext(), ServPro.class, "servpro.db").build();
-        serviceProviderDao = db.serviceProviderDao();
-        customerDao = db.customerDao();
+        servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
 
 
 
 
         btnViewServiceProvider.setOnClickListener((View view)-> {
 
-            email = txtEmail.getText().toString().toLowerCase();
-            password = txtPassword.getText().toString();
-          //  Toast.makeText(Login2Activity.this, email + " "+password+" "+selection, Toast.LENGTH_SHORT).show();
+                    email = txtEmail.getText().toString().toLowerCase();
+                    password = txtPassword.getText().toString();
 
-            if(check.isChecked()) {
-                selection = "S";
+                    if (check.isChecked()) {
+                        selection = "S";
+
+
+                    }
+//                    Toast.makeText(Login2Activity.this, email + " " + password + " " + selection, Toast.LENGTH_SHORT).show();
+
+
+                    if (selection == "S") {
+//                        ToastLogin2Activity.this.makeText(Login2Activity.this, "In S", Toast.LENGTH_SHORT).show();
+                        servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+
+                        servProViewModel.getServicePros().observe(this, new Observer<List<ServiceProvider>>() {
+                            @Override
+                            public void onChanged(List<ServiceProvider> allServiceProvider) {
+                        for (int i = 0; i < allServiceProvider.size(); i++) {
+                            Log.d("CHECK", allServiceProvider.get(i).getEmail());
+                            if (email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim()) && password.equals(allServiceProvider.get(i).getPassword().trim())) {
+
+                                Intent intent = new Intent(Login2Activity.this, ServProProfileActivity.class);
+                                Bundle b = new Bundle();
+                                b.putString("USERNAME",allServiceProvider.get(i).getEmail());
+                                intent.putExtras(b);
+                                startActivity(intent);
+
+                                flag = "T";
+                                break;
+                            }
+
+                            if (allServiceProvider.size() - i == 1) {
+
+                                Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                                Log.d(TAG, flag);
+                            }
+                        }
+
+                            }
+                        });
+
+//                        List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
+
+                    }
+
+            if (selection == "C") {
+                servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+                servProViewModel.getCustomers().observe(this, new Observer<List<Customer>>() {
+                    @Override
+                    public void onChanged(List<Customer> allCustomer) {
+                        for (int i = 0; i < allCustomer.size(); i++) {
+                            //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
+                            Log.d(TAG, "incorrect password : " + email + "-" + allCustomer.get(i).getEmail().toString().toLowerCase()
+                                    + "//" + password + "-" + allCustomer.get(i).getPassword().toString().trim());
+                            if (email.equals(allCustomer.get(i).getEmail().toLowerCase()) && password.equals(allCustomer.get(i).getPassword())) {
+                                flag = "T";
+                                Intent intent = new Intent(Login2Activity.this, GetCityActivity.class);
+                                Bundle b = new Bundle();
+                                b.putString("USERNAME",allCustomer.get(i).getEmail());
+                                intent.putExtras(b);
+                                startActivity(intent);
+
+                                break;
+                            }
+                        }
+                    }
+                });
+
+
+
+
+
 
             }
 
-            ExecutorService executorService = Executors.newSingleThreadExecutor();
-            executorService.execute(new Runnable() {
-                @Override
-                public void run() {
 
 
 
-                    if(selection =="S"){
-                        List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
-
-                        for(int i = 0; i<allServiceProvider.size();i++){
-                            Log.d("CHECK", allServiceProvider.get(i).getEmail());
-                            if(email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim())&&password.equals(allServiceProvider.get(i).getPassword().trim())){
-                                startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
-                                flag = "T";
-                                break;
-                            }
-
-                            if(allServiceProvider.size() - i == 1){
-
-                                Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
-                                Log.d(TAG,flag);
-                            }
-                        }
-                    }
-                    if(selection=="C"){
-                        List<Customer> allCustomer = customerDao.getAllCustomer();
+//                    if (!executorService.isTerminated()) {
+//                        Log.d(TAG, "THIS");
+//                        // Toast.makeText(Login2Activity.this, "Username or Passoword Incorrect",
+//                        //     Toast.LENGTH_SHORT).show();
+//                    }
 
 
-                        for(int i = 0; i<allCustomer.size();i++){
-                            //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
-                            Log.d(TAG,"incorrect password : "+email+"-"+allCustomer.get(i).getEmail().toString().toLowerCase()
-                                    +"//"+ password + "-" + allCustomer.get(i).getPassword().toString().trim() );
-                            if(email.equals(allCustomer.get(i).getEmail().toLowerCase())&&password.equals(allCustomer.get(i).getPassword())){
-                                startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
-                                flag = "T";
-                                break;
-                            }
-                        }
+                });
 
-
-                    }
-                }
-            });
-
-
-
-               if(!executorService.isTerminated()){
-                   Log.d(TAG,"THIS");
-                      // Toast.makeText(Login2Activity.this, "Username or Passoword Incorrect",
-                                   //     Toast.LENGTH_SHORT).show();
-               }
-
-
-
-
-        });
 
         // Google Sign in
 
@@ -185,47 +211,58 @@ public class Login2Activity extends AppCompatActivity {
                 Toast.makeText(this, "Signed in as " + personName, Toast.LENGTH_SHORT).show();
 
                 if(selection =="S"){
-                    List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
+                    servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+                    servProViewModel.getServicePros().observe(this, new Observer<List<ServiceProvider>>() {
+                        @Override
+                        public void onChanged(List<ServiceProvider> allServiceProvider) {
 
-                    for(int i = 0; i<allServiceProvider.size();i++){
+                            for(int i = 0; i<allServiceProvider.size();i++){
 
-                        Log.d(TAG,"incorrect password : "+email+"-"+allServiceProvider.get(i).getEmail().toString().toLowerCase()
-                                +"//"+ password + "-" + allServiceProvider.get(i).getPassword().toString().trim() );
+                                Log.d(TAG,"incorrect password : "+email+"-"+allServiceProvider.get(i).getEmail().toString().toLowerCase()
+                                        +"//"+ password + "-" + allServiceProvider.get(i).getPassword().toString().trim() );
 
-                        if(email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim())&&password.equals(allServiceProvider.get(i).getPassword().trim())){
-                            startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
-                            flag = "T";
-                            break;
+                                if(email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim())&&password.equals(allServiceProvider.get(i).getPassword().trim())){
+                                    startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
+                                    flag = "T";
+                                    break;
+                                }
+
+                                if(allServiceProvider.size() - i == 1){
+
+                                    Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG,flag);
+                                }
+                            }
                         }
+                    });
+//                    List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
 
-                        if(allServiceProvider.size() - i == 1){
 
-                            Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
-                            Log.d(TAG,flag);
-                        }
-                    }
                 }
 
                 if(selection=="C"){
-                    List<Customer> allCustomer = customerDao.getAllCustomer();
 
+                    servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+                    servProViewModel.getCustomers().observe(this, new Observer<List<Customer>>() {
+                        @Override
+                        public void onChanged(List<Customer> allCustomer) {
 
-                    for(int i = 0; i<allCustomer.size();i++){
-                        //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
-                        Log.d(TAG,"incorrect password : "+email+"-"+allCustomer.get(i).getEmail().toString().toLowerCase()
-                                +"//"+ password + "-" + allCustomer.get(i).getPassword().toString().trim() );
-                        if(email.equals(allCustomer.get(i).getEmail().toLowerCase())&&password.equals(allCustomer.get(i).getPassword())){
-                            startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
-                            break;
+                            for(int i = 0; i<allCustomer.size();i++){
+                                //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
+                                Log.d(TAG,"incorrect password : "+email+"-"+allCustomer.get(i).getEmail().toString().toLowerCase()
+                                        +"//"+ password + "-" + allCustomer.get(i).getPassword().toString().trim() );
+                                if(email.equals(allCustomer.get(i).getEmail().toLowerCase())&&password.equals(allCustomer.get(i).getPassword())){
+                                    startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
+                                    break;
+                                }
+                                if(allCustomer.size() - i == 1){
+
+                                    Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG,flag);
+                                }
+                            }
                         }
-                        if(allCustomer.size() - i == 1){
-
-                            Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
-                            Log.d(TAG,flag);
-                        }
-                    }
-
-
+                    });
                 }
 
 

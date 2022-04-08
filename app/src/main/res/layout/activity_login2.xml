@@ -75,7 +75,7 @@
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="169dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="Service Provider"
@@ -99,5 +99,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnCustomerRegistration"
+        android:layout_width="153dp"
+        android:layout_height="76dp"
+        android:text="Register as a Customer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSign"
+        app:layout_constraintVertical_bias="0.629" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

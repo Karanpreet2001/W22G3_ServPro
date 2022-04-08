@@ -25,8 +25,7 @@ public class ServProEditActivity extends AppCompatActivity {
     EditText editEmail, editWage, editDescription, editStreet, editCity;
     Button btnToUpdate, btnToDelete;
 
-    ServPro db;
-    ServiceProviderDao serviceProviderDao;
+
     String email, description, wage, city, address, street, password;
 
     @Override
@@ -66,8 +65,7 @@ public class ServProEditActivity extends AppCompatActivity {
 
 
 
-        db = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
-        serviceProviderDao= db.serviceProviderDao();
+
 
         btnToUpdate.setOnClickListener((View view) ->{
 

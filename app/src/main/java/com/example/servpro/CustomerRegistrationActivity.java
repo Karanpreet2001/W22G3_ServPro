@@ -1,6 +1,7 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityCustomerRegistrationBinding;
 import com.example.servpro.models.Customer;
+import com.example.servpro.viewModel.ServProViewModel;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,6 +26,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
     String name, email, phone, address, password;
     int age;
     ServPro db;
+    ServProViewModel servProViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,25 +69,31 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
 
 
                 if(!name.isEmpty() && !address.isEmpty() && !email.isEmpty()&& !phone.isEmpty()&& !password.isEmpty()){
+                    Customer customer = new Customer(name, age, email, phone, address, password);
 
-                    ExecutorService executorService = Executors.newSingleThreadExecutor();
-                    //String customerName, int age, @NonNull String email, String phone, String address, String password
-                    executorService.execute(new Runnable() {
-                        @Override
-                        public void run() {
-                            Customer customer = new Customer(name, age, email, phone, address, password);
-                            db.customerDao().insertCustomer(customer);
-
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(CustomerRegistrationActivity.this, "You are register", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                    servProViewModel = new ViewModelProvider(CustomerRegistrationActivity.this).get(ServProViewModel.class);
+                    servProViewModel.insert(customer);
+                    Toast.makeText(CustomerRegistrationActivity.this, "You are registered", Toast.LENGTH_SHORT).show();
 
 
-                        }
-                    });
+//                    ExecutorService executorService = Executors.newSingleThreadExecutor();
+//
+//                    executorService.execute(new Runnable() {
+//                        @Override
+//                        public void run() {
+//
+//                            db.customerDao().insertCustomer(customer);
+//
+//                            runOnUiThread(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    Toast.makeText(CustomerRegistrationActivity.this, "You are register", Toast.LENGTH_SHORT).show();
+//                                }
+//                            });
+//
+//
+//                        }
+//                    });
 
 
                 }else{

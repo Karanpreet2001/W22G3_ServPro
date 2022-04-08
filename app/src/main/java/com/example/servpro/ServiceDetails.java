@@ -32,6 +32,7 @@ public class ServiceDetails extends AppCompatActivity {
         String city = data.getString("CITY", "error");
         String wage = data.getString("WAGE", "error");
         String description = data.getString("DESCRIPTION", "error");
+        String username = data.getString("USERNAME");
 
         Log.d("DES", description+wage);
         
@@ -87,6 +88,7 @@ public class ServiceDetails extends AppCompatActivity {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
                 Bundle dataToContact = new Bundle();
+                dataToContact.putString("USERNAME", username);
                 dataToContact.putString("NAME", name);
                 dataToContact.putString("EMAIL", email);
                 dataToContact.putString("PHONE", phone);
@@ -98,22 +100,9 @@ public class ServiceDetails extends AppCompatActivity {
                 ft.replace(R.id.fragmentContainerView,cf).commit();
 
 
-
-//                fragmentManager.beginTransaction()
-//                        .replace(R.id.fragmentContainerView, ContactFragment.class, null)
-//                        .setReorderingAllowed(true)
-//                        .addToBackStack("name") // name can be null
-//                        .commit();
             }
         });
-//        Bundle b= getIntent().getExtras();
-//        String name = b.getString("NAME");
-//
-//
-//        TextView txtTemp = findViewById(R.id.txtViewResult);
-//
-//
-//        txtTemp.setText(name);
+
 
 
     }

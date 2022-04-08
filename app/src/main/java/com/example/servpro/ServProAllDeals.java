@@ -31,7 +31,8 @@ public class ServProAllDeals extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serv_pro_all_deals);
+        binding = ActivityServProAllDealsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         RecyclerView recyclerView = binding.recyclerViewDeals;
 

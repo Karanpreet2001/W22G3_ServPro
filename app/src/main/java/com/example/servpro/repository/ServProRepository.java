@@ -69,6 +69,10 @@ public class ServProRepository {
         return customerDao.getCustomers();
     }
 
+    public LiveData<List<ServiceProvider>> getServicePros(){
+        return serviceProviderDao.getServiceProviderAccordingToCAO();
+    }
+
     public LiveData<List<Connection>> getConnections(String email){
             return connectionDao.getConnections(email);
     }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 
@@ -17,8 +18,10 @@ import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.FragmentContactBinding;
 import com.example.servpro.interfaces.ConnectionDao;
 import com.example.servpro.models.Connection;
+import com.example.servpro.models.ServiceProvider;
 import com.example.servpro.viewModel.ServProViewModel;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -38,8 +41,8 @@ public class ContactFragment extends Fragment {
     String email, phone, address, city;
     TextView txtEmail, txtPhone, txtAddress;
     Button btnToConnect, btnSendAMessage;
-    String tempEmail="new@gmail.com";
-    String tempName = "new";
+    String custName;
+    String username;
     ConnectionDao dao;
     String name;
 
@@ -66,6 +69,7 @@ public class ContactFragment extends Fragment {
             phone = data.getString("PHONE");
             address = data.getString("ADDRESS");
             city = data.getString("CITY");
+            username = data.getString("USERNAME");
 
         }
 
@@ -74,24 +78,21 @@ public class ContactFragment extends Fragment {
         txtAddress.setText(address+", "+city);
 
 
-//        db = Room.databaseBuilder(getActivity(),ServPro.class,"servpro.db").build();
-//        dao = db.connectionDao();
+        servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+        servProViewModel.getServPro(username).observe(getViewLifecycleOwner(), new Observer<List<ServiceProvider>>() {
+            @Override
+            public void onChanged(List<ServiceProvider> serviceProviderList) {
+                custName = serviceProviderList.get(0).getServiceProvider();
+            }
+        });
+
 
         btnToConnect.setOnClickListener((View vie)-> {
 
-            Connection con = new Connection(tempName,tempEmail,email,name);
+            Connection con = new Connection(username,custName,email,name);
 
             servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
             servProViewModel.insert(con);
-
-//            ExecutorService executorService = Executors.newSingleThreadExecutor();
-//            executorService.execute(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    dao.insertConnection(con);
-//                }
-//            });
 
         });
 
@@ -100,7 +101,7 @@ public class ContactFragment extends Fragment {
             Intent intent = new Intent(getActivity(), FixADealActivity.class);
             Bundle b = new Bundle();
 
-            b.putString("CostEmail","karanpreet@gmail.com");
+            b.putString("CostEmail",username);
             b.putString("ServEmail", email);
 
             intent.putExtras(b);

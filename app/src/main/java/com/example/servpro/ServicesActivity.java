@@ -58,6 +58,7 @@ public class ServicesActivity extends AppCompatActivity {
         Bundle b1= getIntent().getExtras();
         String city = b1.getString("CITY");
         String service = b1.getString("SERVICE");
+        String username = b1.getString("EMAIL");
 
         Log.d("city",city +service);
 
@@ -83,6 +84,7 @@ public class ServicesActivity extends AppCompatActivity {
 
                         Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
                         Bundle b = new Bundle();
+                        b.putString("USERNAME", username);
                         b.putString("NAME",extractList.get(index).getServiceProvider());
                         b.putString("AGE", extractList.get(index).getAge());
                         b.putString("OCCU", extractList.get(index).getOccupation());

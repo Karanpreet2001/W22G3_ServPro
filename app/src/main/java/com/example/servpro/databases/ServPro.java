@@ -53,6 +53,7 @@ public abstract class ServPro extends RoomDatabase {
             new PopulateConnectionDbAsyncTask(instance).execute();
             new PopulateDealsDbAsyncTask(instance).execute();
 
+
         }
     };
 
