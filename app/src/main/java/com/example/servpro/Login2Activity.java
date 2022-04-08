@@ -40,7 +40,8 @@ public class Login2Activity extends AppCompatActivity {
     ServiceProviderDao serviceProviderDao;
     CustomerDao customerDao;
     String selection="C";
-    boolean bool= false;
+    String TAG = "logintest";
+    String flag = "F";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,69 @@ public class Login2Activity extends AppCompatActivity {
 
         btnViewServiceProvider.setOnClickListener((View view)-> {
 
-            startActivity(new Intent(Login2Activity.this,ServProProfileActivity.class));
+            email = txtEmail.getText().toString().toLowerCase();
+            password = txtPassword.getText().toString();
+          //  Toast.makeText(Login2Activity.this, email + " "+password+" "+selection, Toast.LENGTH_SHORT).show();
+
+            if(check.isChecked()) {
+                selection = "S";
+
+            }
+
+            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+
+
+
+                    if(selection =="S"){
+                        List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
+
+                        for(int i = 0; i<allServiceProvider.size();i++){
+                            Log.d("CHECK", allServiceProvider.get(i).getEmail());
+                            if(email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim())&&password.equals(allServiceProvider.get(i).getPassword().trim())){
+                                startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
+                                flag = "T";
+                                break;
+                            }
+
+                            if(allServiceProvider.size() - i == 1){
+
+                                Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                                Log.d(TAG,flag);
+                            }
+                        }
+                    }
+                    if(selection=="C"){
+                        List<Customer> allCustomer = customerDao.getAllCustomer();
+
+
+                        for(int i = 0; i<allCustomer.size();i++){
+                            //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
+                            Log.d(TAG,"incorrect password : "+email+"-"+allCustomer.get(i).getEmail().toString().toLowerCase()
+                                    +"//"+ password + "-" + allCustomer.get(i).getPassword().toString().trim() );
+                            if(email.equals(allCustomer.get(i).getEmail().toLowerCase())&&password.equals(allCustomer.get(i).getPassword())){
+                                startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
+                                flag = "T";
+                                break;
+                            }
+                        }
+
+
+                    }
+                }
+            });
+
+
+
+               if(!executorService.isTerminated()){
+                   Log.d(TAG,"THIS");
+                      // Toast.makeText(Login2Activity.this, "Username or Passoword Incorrect",
+                                   //     Toast.LENGTH_SHORT).show();
+               }
+
+
 
 
         });
@@ -91,6 +154,8 @@ public class Login2Activity extends AppCompatActivity {
             startActivityForResult(signInIntent, RC_SIGN_IN);
 
         });
+
+
 
 
     }
@@ -118,6 +183,51 @@ public class Login2Activity extends AppCompatActivity {
                 String personEmail = acct.getEmail();
 
                 Toast.makeText(this, "Signed in as " + personName, Toast.LENGTH_SHORT).show();
+
+                if(selection =="S"){
+                    List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
+
+                    for(int i = 0; i<allServiceProvider.size();i++){
+
+                        Log.d(TAG,"incorrect password : "+email+"-"+allServiceProvider.get(i).getEmail().toString().toLowerCase()
+                                +"//"+ password + "-" + allServiceProvider.get(i).getPassword().toString().trim() );
+
+                        if(email.equals(allServiceProvider.get(i).getEmail().toLowerCase().trim())&&password.equals(allServiceProvider.get(i).getPassword().trim())){
+                            startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
+                            flag = "T";
+                            break;
+                        }
+
+                        if(allServiceProvider.size() - i == 1){
+
+                            Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,flag);
+                        }
+                    }
+                }
+
+                if(selection=="C"){
+                    List<Customer> allCustomer = customerDao.getAllCustomer();
+
+
+                    for(int i = 0; i<allCustomer.size();i++){
+                        //  Log.d("CHECKLIST", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
+                        Log.d(TAG,"incorrect password : "+email+"-"+allCustomer.get(i).getEmail().toString().toLowerCase()
+                                +"//"+ password + "-" + allCustomer.get(i).getPassword().toString().trim() );
+                        if(email.equals(allCustomer.get(i).getEmail().toLowerCase())&&password.equals(allCustomer.get(i).getPassword())){
+                            startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
+                            break;
+                        }
+                        if(allCustomer.size() - i == 1){
+
+                            Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,flag);
+                        }
+                    }
+
+
+                }
+
 
             }
             else{
