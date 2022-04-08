@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerRegistrationActivity">
+
+    <EditText
+        android:id="@+id/editCustName"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/custom_login_input"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editCustAge"
+
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Enter Age"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCustName"
+        android:background="@drawable/custom_login_input"
+        android:paddingEnd="12dp"
+        android:drawableStart="@drawable/ic_date"
+        android:drawablePadding="12dp"
+        android:paddingStart="12dp"/>
+
+    <EditText
+        android:id="@+id/editCustPhone"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Enter Phone No"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCustAge"
+        android:background="@drawable/custom_login_input"
+        android:drawableStart="@drawable/ic_phone_24"
+        android:drawablePadding="12dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"/>
+
+    <EditText
+        android:id="@+id/editCustEmail"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/editCustPhone"
+        android:background="@drawable/custom_login_input"/>
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCustAddress"
+        android:drawableStart="@drawable/ic_security"
+        android:drawablePadding="12dp"
+
+        tools:ignore="SpeakableTextPresentCheck"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:background="@drawable/custom_login_input"/>
+
+    <EditText
+        android:id="@+id/editCustAddress"
+        android:layout_width="256dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Enter Address"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableStart="@drawable/ic_home_24"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:drawablePadding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/editCustEmail"
+        android:background="@drawable/custom_login_input"/>
+
+    <Button
+        android:id="@+id/btnCustRegister"
+        android:layout_width="137dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+
+
+        android:background="@drawable/input_bg"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="Register"
+        android:textColor="@color/black"
+        app:backgroundTint="#FF9800"
+
+        app:layout_constraintEnd_toStartOf="@+id/btnCustLogin"
+        app:layout_constraintHorizontal_bias="0.463"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <Button
+        android:id="@+id/btnCustLogin"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/custom_login_input"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="Sign In"
+        app:backgroundTint="#8BC34A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/txtTitleReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer Registration"
+        android:textColor="#737373"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editCustName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

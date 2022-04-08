@@ -67,61 +67,7 @@ public class Login2Activity extends AppCompatActivity {
 
         btnViewServiceProvider.setOnClickListener((View view)-> {
 
-            email = txtEmail.getText().toString().trim();
-            password = txtPassword.getText().toString().trim();
-            Toast.makeText(Login2Activity.this, email + " "+password+" "+selection, Toast.LENGTH_SHORT).show();
-
-            if(check.isChecked()){
-                selection = "S";
-
-            }
-
-            ExecutorService executorService = Executors.newSingleThreadExecutor();
-            executorService.execute(new Runnable() {
-                @Override
-                public void run() {
-
-
-                    if(selection =="S"){
-                        List<ServiceProvider> allServiceProvider = serviceProviderDao.getServiceProviderAccordingToCAO();
-
-                        for(int i = 0; i<allServiceProvider.size();i++){
-                            Log.d("CHECK", allServiceProvider.get(i).getEmail());
-                            if(email.equals(allServiceProvider.get(i).getEmail())||password.equals(allServiceProvider.get(i).getPassword())){
-                                bool = true;
-                                break;
-                            }
-                        }
-                    }
-                    if(selection=="C"){
-                        List<Customer> allCustomer = customerDao.getAllCustomer();
-                        for(int i = 0; i<allCustomer.size();i++){
-                            Log.d("CHECK", allCustomer.get(i).getEmail()+allCustomer.get(i).getPassword());
-
-                            if(email.equals(allCustomer.get(i).getEmail()) ||password.equals(allCustomer.get(i).getPassword())){
-                                bool = true;
-                                Toast.makeText(Login2Activity.this, "True", Toast.LENGTH_SHORT).show();
-                                break;
-                            }
-                        }
-                    }
-                }
-            });
-
-
-
-
-
-            if(bool==true){
-                if(selection.equals("S")){
-                    startActivity(new Intent(Login2Activity.this, ServProProfileActivity.class));
-                }else{
-                    startActivity(new Intent(Login2Activity.this,GetCityActivity.class));
-                }
-            }else{
-                Toast.makeText(Login2Activity.this, "Username does not exit", Toast.LENGTH_SHORT).show();
-            }
-
+            startActivity(new Intent(Login2Activity.this,ServProProfileActivity.class));
 
 
         });

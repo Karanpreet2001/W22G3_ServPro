@@ -1,6 +1,7 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,7 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.servpro.databases.ServPro;
+
 import java.io.ByteArrayOutputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class UploadBusActivity extends AppCompatActivity {
 
@@ -22,6 +27,7 @@ public class UploadBusActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     Bitmap servicePic ;
     byte[] servicePicByte;
+    ServPro db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,11 @@ public class UploadBusActivity extends AppCompatActivity {
         btnRegister=findViewById(R.id.btnUploadImage);
         btnUpload=findViewById(R.id.btnUploadImage);
 
+
+        db = Room.databaseBuilder(getApplicationContext(), ServPro.class,"servpro.db").build();
+
+
+
         btnUpload.setOnClickListener((View view) -> {
 
 
@@ -52,7 +63,12 @@ public class UploadBusActivity extends AppCompatActivity {
 
         btnRegister.setOnClickListener((View view) -> {
 
-            // enter database data
+
+            ExecutorService executorService = Executors.newSingleThreadExecutor();
+            executorService.execute(() -> {
+
+
+            });
 
 
         });

@@ -1,6 +1,8 @@
 package com.example.servpro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -23,6 +25,7 @@ import com.example.servpro.adapters.ServicesRecyclerView;
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.ServiceProvider;
+import com.example.servpro.viewModel.ServProViewModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 
@@ -36,7 +39,8 @@ public class ServicesActivity extends AppCompatActivity {
     String city, service;
     ServPro servPro;
     ServiceProviderDao serviceProviderDao;
-    List<ServiceProvider> extractList = new ArrayList<>();
+
+    ServProViewModel servProViewModel;
     ServicesRecyclerView servicesRecyclerView;
     ShimmerFrameLayout shimmerFrameLayout;
 
@@ -62,27 +66,20 @@ public class ServicesActivity extends AppCompatActivity {
         recyclerViewServices.setLayoutManager(ln);
 
 
+        servProViewModel= new ViewModelProvider(this).get(ServProViewModel.class);
+        servProViewModel.getServicesByCAS(city,service).observe(this, new Observer<List<ServiceProvider>>() {
+            @Override
+            public void onChanged(List<ServiceProvider> extractList) {
 
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
+                recyclerViewServices.setVisibility(View.VISIBLE);
+                Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
 
-        servPro = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
-        serviceProviderDao= servPro.serviceProviderDao();
-
-
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-        executorService.execute(() ->{
-
-
-             extractList = serviceProviderDao.getServiceProviderAccordingly(city, service);
-
-
-
-
-            runOnUiThread(() -> {
-
-                 servicesRecyclerView = new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
+                recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
                     @Override
                     public void onClickItem(int index) {
+
 
                         Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
                         Bundle b = new Bundle();
@@ -99,21 +96,77 @@ public class ServicesActivity extends AppCompatActivity {
                         result.putExtras(b);
                         startActivity(result);
                     }
-                });
-
-                shimmerFrameLayout.stopShimmer();
-                shimmerFrameLayout.setVisibility(View.GONE);
-                recyclerViewServices.setVisibility(View.VISIBLE);
+                }));
 
 
-                recyclerViewServices.setAdapter(servicesRecyclerView);
-            });
 
 
+
+
+            }
         });
 
 
-    }
+
+
+
+
+//
+//        servPro = Room.databaseBuilder(getApplicationContext(),ServPro.class, "servpro.db").build();
+//        serviceProviderDao= servPro.serviceProviderDao();
+
+
+
+
+
+
+
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//
+//        executorService.execute(() ->{
+//
+//
+//             extractList = serviceProviderDao.getServiceProviderAccordingly(city, service);
+//
+//
+//
+//
+//            runOnUiThread(() -> {
+//
+//                 servicesRecyclerView = new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
+//                    @Override
+//                    public void onClickItem(int index) {
+//
+//                        Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
+//                        Bundle b = new Bundle();
+//                        b.putString("NAME",extractList.get(index).getServiceProvider());
+//                        b.putString("AGE", extractList.get(index).getAge());
+//                        b.putString("OCCU", extractList.get(index).getOccupation());
+//                        b.putString("EMAIL", extractList.get(index).getEmail());
+//                        b.putString("PHONE", extractList.get(index).getPhone());
+//                        b.putString("ADDRESS", extractList.get(index).getStreet());
+//                        b.putString("CITY", extractList.get(index).getCity());
+//                        b.putString("WAGE", extractList.get(index).getWage());
+//                        b.putString("DESCRIPTION", extractList.get(index).getDescription());
+//
+//                        result.putExtras(b);
+//                        startActivity(result);
+//                    }
+//                });
+//
+//                shimmerFrameLayout.stopShimmer();
+//                shimmerFrameLayout.setVisibility(View.GONE);
+//                recyclerViewServices.setVisibility(View.VISIBLE);
+//
+//
+//                recyclerViewServices.setAdapter(servicesRecyclerView);
+//            });
+//
+//
+//        });
+//
+//
+       }
 
 
     @Override

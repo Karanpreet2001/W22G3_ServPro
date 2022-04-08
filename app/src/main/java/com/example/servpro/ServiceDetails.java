@@ -36,7 +36,7 @@ public class ServiceDetails extends AppCompatActivity {
         Log.d("DES", description+wage);
         
         
-        FragmentManager fragmentManager = getSupportFragmentManager();
+
 
         ProfileFragment profileFragment = new ProfileFragment();
 
@@ -87,6 +87,7 @@ public class ServiceDetails extends AppCompatActivity {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
                 Bundle dataToContact = new Bundle();
+                dataToContact.putString("NAME", name);
                 dataToContact.putString("EMAIL", email);
                 dataToContact.putString("PHONE", phone);
                 dataToContact.putString("ADDRESS", address);

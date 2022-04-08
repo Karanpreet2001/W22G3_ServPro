@@ -2,6 +2,8 @@ package com.example.servpro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -20,6 +22,7 @@ import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityServProProfileBinding;
 import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.ServiceProvider;
+import com.example.servpro.viewModel.ServProViewModel;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -37,6 +40,7 @@ public class ServProProfileActivity extends AppCompatActivity {
     TextView txtPhone;
     Button btnToViewAllServices;
     String username;
+    ServProViewModel servProViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,21 +66,39 @@ public class ServProProfileActivity extends AppCompatActivity {
             startActivity(new Intent(ServProProfileActivity.this, ServProAllServices.class));
         });
 
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(()-> {
 
-            List<ServiceProvider> sp = serviceProviderDao.getServProName(username);
-            int noOfServices = serviceProviderDao.getServProAllServices(username);
+        servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
+        servProViewModel.getServPro(username).observe(this, new Observer<List<ServiceProvider>>() {
+            @Override
+            public void onChanged(List<ServiceProvider> sp) {
+
+                int noOfServices = sp.size();
 
 
-            runOnUiThread(() ->{
-
-                txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
-                txtPhone.setText(sp.get(0).getPhone());
-                txtEmail.setText(sp.get(0).getEmail());
-                txtAllService.setText("You have "+noOfServices+" registered services");
-            });
+        txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
+        txtPhone.setText(sp.get(0).getPhone());
+        txtEmail.setText(sp.get(0).getEmail());
+        txtAllService.setText("You have "+noOfServices+" registered services");
+            }
         });
+
+
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+//        executorService.execute(()-> {
+//
+//            List<ServiceProvider> sp = serviceProviderDao.getServProName(username);
+//
+//
+////
+//
+//            runOnUiThread(() ->{
+//
+//                txtTitle.setText("Hi, "+sp.get(0).getServiceProvider());
+//                txtPhone.setText(sp.get(0).getPhone());
+//                txtEmail.setText(sp.get(0).getEmail());
+//                txtAllService.setText("You have "+noOfServices+" registered services");
+//            });
+//        });
 
 
 
