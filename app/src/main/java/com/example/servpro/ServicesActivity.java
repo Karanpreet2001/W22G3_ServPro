@@ -1,25 +1,20 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
-import android.app.UiAutomation;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-//import android.widget.SearchView;
-import androidx.appcompat.widget.SearchView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.servpro.adapters.ServicesRecyclerView;
 import com.example.servpro.databases.ServPro;
@@ -28,11 +23,9 @@ import com.example.servpro.models.ServiceProvider;
 import com.example.servpro.viewModel.ServProViewModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
+//import android.widget.SearchView;
 
 public class ServicesActivity extends AppCompatActivity {
 
