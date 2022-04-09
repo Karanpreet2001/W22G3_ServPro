@@ -1,35 +1,12 @@
 package com.example.servpro;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.servpro.adapters.ServicesRecyclerView;
-import com.example.servpro.databases.ServPro;
-import com.example.servpro.interfaces.ServiceProviderDao;
-import com.example.servpro.models.ServiceProvider;
-import com.example.servpro.viewModel.ServProViewModel;
-import com.facebook.shimmer.ShimmerFrameLayout;
-
-import java.util.List;
 
 //import android.widget.SearchView;
 
 public class ServicesActivity extends AppCompatActivity {
 
-    String city, service;
+    /*String city, service;
     ServPro servPro;
     ServiceProviderDao serviceProviderDao;
 
@@ -187,5 +164,5 @@ public class ServicesActivity extends AppCompatActivity {
         });
 
         return  true;
-    }
+    }*/
 }

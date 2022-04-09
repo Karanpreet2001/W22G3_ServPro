@@ -3,59 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_fix_adeal.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_get_city.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_get_coordinates.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_google_maps.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_login2.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_service_details.xml" value="0.25" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_services.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_user_register.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_view_connection_detail.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/dialogbox_layout.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/fragment_contact.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/fragment_profile.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_all_services.xml" value="0.264" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_connect.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/menu/citymenu.xml" value="0.176" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/custom_login_email.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/custom_login_input.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/custom_login_password.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.14375" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_baseline_email_focused_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.14375" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_baseline_lock_focused_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_date.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_email.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_home_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_person.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_phone_24.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_search.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/ic_security.xml" value="0.26614583333333336" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/drawable/input_bg.xml" value="0.14375" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_connection.xml" value="0.16799999999999998" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_customer_registration.xml" value="0.264" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_fix_adeal.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_get_city.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_get_service.xml" value="0.23324275362318841" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_log_in.xml" value="0.25" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_login2.xml" value="0.264" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_login2.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.23777173913043478" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_add_new_service.xml" value="0.1171875" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_deals.xml" value="0.152" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_deals_details.xml" value="0.264" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.264" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_edit.xml" value="0.176" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_deals.xml" value="0.103125" />
+        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.103125" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_serv_pro_profile.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_service_details.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_services.xml" value="0.24635416666666668" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_splash.xml" value="0.1171875" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_upload_bus.xml" value="0.2359375" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_view_connection_detail.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/dialogbox_layout.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/fragment_contact.xml" value="0.264" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_all_services.xml" value="0.25" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_connect.xml" value="0.2" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_deal.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_row.xml" value="0.2" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_shimmer.xml" value="0.1171875" />
-        <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/menu/menu_serachbar.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/menu/service_pro_menu.xml" value="0.25" />
-        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_customer_registration.xml" value="0.136" />
-        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_fix_adeal.xml" value="0.2" />
-        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_login2.xml" value="0.153125" />
       </map>
     </option>
   </component>
