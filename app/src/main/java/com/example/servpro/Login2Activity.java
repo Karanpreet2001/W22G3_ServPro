@@ -1,10 +1,5 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +9,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.servpro.databases.ServPro;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.servpro.databinding.ActivityLogin2Binding;
-import com.example.servpro.interfaces.CustomerDao;
-import com.example.servpro.interfaces.ServiceProviderDao;
 import com.example.servpro.models.Customer;
 import com.example.servpro.models.ServiceProvider;
 import com.example.servpro.viewModel.ServProViewModel;
@@ -29,8 +25,6 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Login2Activity extends AppCompatActivity {
 
@@ -156,6 +150,7 @@ public class Login2Activity extends AppCompatActivity {
 //                        // Toast.makeText(Login2Activity.this, "Username or Passoword Incorrect",
 //                        //     Toast.LENGTH_SHORT).show();
 //                    }
+
 
 
                 });

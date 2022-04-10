@@ -1,10 +1,6 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.util.Pair;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,15 +8,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pair;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityFixAdealBinding;
 import com.example.servpro.models.Deals;
 import com.example.servpro.viewModel.ServProViewModel;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class FixADealActivity extends AppCompatActivity {
 
@@ -46,6 +44,9 @@ public class FixADealActivity extends AppCompatActivity {
         Button btnSetDate = binding.btnPickADate;
         Button btnMakeADeal = binding.btnMakeADeal;
         editMessage = binding.editTextMessage;
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.fix)));
 
         MaterialDatePicker materialDatePicker = MaterialDatePicker.Builder.dateRangePicker().setSelection(Pair.create(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())).build();
 

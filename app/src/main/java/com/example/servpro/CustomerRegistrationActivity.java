@@ -1,23 +1,23 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityCustomerRegistrationBinding;
 import com.example.servpro.models.Customer;
 import com.example.servpro.viewModel.ServProViewModel;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class CustomerRegistrationActivity extends AppCompatActivity {
 
@@ -34,6 +34,9 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         binding = ActivityCustomerRegistrationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.customer)));
+
         txtName = binding.editCustName;
         txtAddress = binding.editCustAddress;
         txtAge = binding. editCustAge;
@@ -43,6 +46,7 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
 
         Button btnRegistor = binding.btnCustRegister;
         Button btnLogin = binding.btnCustLogin;
+
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +62,44 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 try{
+                    Dialog dialog;
+                    Button btnLogin = findViewById(R.id.btnAlreadyRegistered);
+                    Button btnRegister = findViewById(R.id.btnUploadImage);
 
-                name = txtName.getText().toString();
+
+                    dialog = new Dialog(CustomerRegistrationActivity.this);
+                    dialog.setContentView(R.layout.dialogbox_layout);
+                    dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg));
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.setCancelable(false);
+                    dialog.getWindow().getAttributes().windowAnimations=R.style.animation;
+                    Button okey = dialog.findViewById(R.id.okayButton);
+                    Button cancel = dialog.findViewById(R.id.cancelButton);
+
+                    okey.setOnClickListener((View view1) -> {
+
+                        Toast.makeText(CustomerRegistrationActivity.this,"Okay",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    });
+                    cancel.setOnClickListener((View view1) -> {
+
+                        Toast.makeText(CustomerRegistrationActivity.this,"cancel",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    });
+
+
+      /*  btnLogin.setOnClickListener((View view)-> {
+
+
+            startActivity(new Intent(LogInActivity.this, googleMaps.class));
+
+        });
+*/
+
+
+
+                            dialog.show();
+                            name = txtName.getText().toString();
                 address = txtAddress.getText().toString();
                 age = Integer.parseInt(txtAge.getText().toString());
                 email = txtEmail.getText().toString();
