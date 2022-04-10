@@ -60,15 +60,14 @@ public class LogInActivity extends AppCompatActivity {
 }*/
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -103,13 +102,13 @@ public class LogInActivity extends AppCompatActivity {
         });
 
 
-        btnLogin.setOnClickListener((View view)-> {
+      /*  btnLogin.setOnClickListener((View view)-> {
 
 
-            startActivity(new Intent(LogInActivity.this, Login2Activity.class));
+            startActivity(new Intent(LogInActivity.this, googleMaps.class));
 
         });
-
+*/
 
        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
