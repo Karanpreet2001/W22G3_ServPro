@@ -74,4 +74,7 @@ dependencies {
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    implementation 'androidx.biometric:biometric:1.0.0-rc01'
 }
