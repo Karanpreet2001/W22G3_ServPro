@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServProAllDealsDetails">
+    tools:context=".ServProAllDealsDetails"
+    android:background="#F8F6F3">
 
     <TextView
         android:id="@+id/tttName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="160dp"
         android:text="Name"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +22,10 @@
         android:id="@+id/tttEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="44dp"
         android:text="Email"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tttName" />
 
@@ -30,9 +33,10 @@
         android:id="@+id/tttDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="108dp"
-        android:text="Date Of Appointment"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="112dp"
+        android:text="D.O.A"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tttName" />
 
@@ -40,9 +44,10 @@
         android:id="@+id/tttMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="45dp"
         android:text="Message"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tttDate" />
 
@@ -50,49 +55,54 @@
         android:id="@+id/tttCustName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="160dp"
-        android:layout_marginEnd="108dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tttForDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttDate"
         app:layout_constraintTop_toBottomOf="@+id/tttCustEmail" />
 
     <TextView
         android:id="@+id/tttCustEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="108dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttEmail"
         app:layout_constraintTop_toBottomOf="@+id/tttCustName" />
 
     <TextView
         android:id="@+id/tttForMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="46dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttMessage"
         app:layout_constraintTop_toBottomOf="@+id/tttForDate" />
 
     <TextView
         android:id="@+id/tttPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="44dp"
         android:text="Phone"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tttMessage" />
 
@@ -100,31 +110,36 @@
         android:id="@+id/tttCustPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttPhone"
         app:layout_constraintTop_toBottomOf="@+id/tttForMessage" />
 
     <TextView
         android:id="@+id/tttDealsTitle"
-        android:layout_width="208dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="261dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="61dp"
         android:text="Deal Details"
+        android:textAllCaps="true"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <TextView
         android:id="@+id/tttAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="44dp"
         android:text="Address"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tttPhone" />
 
@@ -132,9 +147,10 @@
         android:id="@+id/tttCustAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="108dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tttAddress"
         app:layout_constraintTop_toBottomOf="@+id/tttCustPhone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

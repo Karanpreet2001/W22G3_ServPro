@@ -53,9 +53,28 @@
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/layout_shimmer.xml" value="0.1171875" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/menu/menu_serachbar.xml" value="0.25" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/menu/service_pro_menu.xml" value="0.25" />
-        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_customer_registration.xml" value="0.136" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/drawable/custom_login_email.xml" value="0.26614583333333336" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/drawable/custom_login_input.xml" value="0.26614583333333336" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/drawable/custom_login_password.xml" value="0.26614583333333336" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.26614583333333336" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/drawable/ic_baseline_email_focused_24.xml" value="0.26614583333333336" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_connection.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_customer_registration.xml" value="0.152" />
         <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_fix_adeal.xml" value="0.2" />
-        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_login2.xml" value="0.153125" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_login2.xml" value="0.152" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_serv_pro_all_deals_details.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_serv_pro_edit.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_serv_pro_profile.xml" value="0.264" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_service_details.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_services.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/activity_view_connection_detail.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/fragment_contact.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/layout_all_services.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/layout_connect.xml" value="0.25" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/layout_deal.xml" value="0.4" />
+        <entry key="..\:/term 5/mobile application development/MVVM/MVVMFinalProject/app/src/main/res/layout/layout_row.xml" value="0.25" />
       </map>
     </option>
   </component>

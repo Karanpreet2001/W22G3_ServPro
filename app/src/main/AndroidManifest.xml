@@ -34,6 +34,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".FixADealActivity"
+            android:exported="false" />
+        <activity
             android:name=".ServiceDetails"
             android:exported="false" />
         <activity
@@ -42,6 +45,8 @@
         <activity
             android:name=".UploadBusActivity"
             android:exported="false" />
+        <activity android:name=".ServProAllDealsDetails"
+            android:exported="true"/>
         <activity
             android:name=".ServicesActivity"
             android:exported="false" />
@@ -55,12 +60,24 @@
             android:name=".UserRegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".CustomerRegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".GetCityActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
 
+        <activity
+            android:name=".ViewConnectionDetailActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".ConnectionActivity"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

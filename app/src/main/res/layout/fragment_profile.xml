@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".ProfileFragment"
+    android:background="#CEE5EF"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#CEE5EF">
 
         <TextView
             android:id="@+id/txt_service_title"
@@ -16,6 +19,8 @@
             android:layout_height="wrap_content"
             android:text="Profile"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/imageView"
@@ -32,7 +37,9 @@
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@tools:sample/avatars"
+
+            />
 
         <TextView
             android:id="@+id/txt_service_name"
@@ -41,7 +48,9 @@
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/txt_service_age"
@@ -53,15 +62,19 @@
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_service_name"
-            app:layout_constraintVertical_bias="0.041" />
+            app:layout_constraintVertical_bias="0.041"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/text_service_occupation"
-            android:layout_width="64dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_service_age" />
 
@@ -72,7 +85,9 @@
             android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_service_wage" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_service_wage"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/txt_service_wage"
@@ -82,6 +97,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_service_occupation" />
+            app:layout_constraintTop_toBottomOf="@+id/text_service_occupation"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
