@@ -33,6 +33,7 @@ public class ServicesActivity extends AppCompatActivity {
     String city, service;
     ServPro servPro;
     ServiceProviderDao serviceProviderDao;
+    final String TAG = "CRASHTAG" ;
 
     ServProViewModel servProViewModel;
     ServicesRecyclerView servicesRecyclerView;
@@ -71,6 +72,7 @@ public class ServicesActivity extends AppCompatActivity {
                 shimmerFrameLayout.setVisibility(View.GONE);
                 recyclerViewServices.setVisibility(View.VISIBLE);
                 Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
+                Log.d(TAG,"THIS IS RUNNING");
 
                 recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
                     @Override
@@ -108,11 +110,11 @@ public class ServicesActivity extends AppCompatActivity {
 
 
 
-
-
-
             }
+
+
         });
+
 
 
 

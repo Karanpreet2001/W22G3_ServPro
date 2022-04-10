@@ -1,7 +1,5 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,8 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class GetServiceActivity extends AppCompatActivity {
 
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,10 @@ public class GetServiceActivity extends AppCompatActivity {
 
             Bundle bun = getIntent().getExtras();
             city= getIntent().getExtras().getString("CITY", "error");
-            txtCity.setText(city);
+            username = getIntent().getExtras().getString("EMAIL");
+        Toast.makeText(GetServiceActivity.this, username, Toast.LENGTH_SHORT).show();
+
+        txtCity.setText(city);
 
 
 
@@ -50,6 +54,7 @@ public class GetServiceActivity extends AppCompatActivity {
                     Bundle bundle = new Bundle();
                     bundle.putString("CITY", city);
                     bundle.putString("SERVICE", service);
+                    bundle.putString("EMAIL", username);
 
                     Log.d("city",city +service);
 

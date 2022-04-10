@@ -1,8 +1,5 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,19 +7,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.servpro.models.ServiceProvider;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 public class GetCityActivity extends AppCompatActivity {
             ListView listView;
@@ -36,12 +25,12 @@ public class GetCityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_city);
 
-        Bundle b = new Bundle();
+        Bundle b = getIntent().getExtras();
         String username = b.getString("USERNAME", "error");
-        Toast.makeText(GetCityActivity.this, "username", Toast.LENGTH_SHORT).show();
+        Toast.makeText(GetCityActivity.this,username , Toast.LENGTH_SHORT).show();
 
-   //     EditText editTextCity = findViewById(R.id.editTextCity);
-       // Button btnNext = findViewById(R.id.btnNext);
+
+
 
         listView = findViewById(R.id.listView);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,cityName);
@@ -62,31 +51,7 @@ public class GetCityActivity extends AppCompatActivity {
                 startActivity(myRes);
             }
         });
-       /*btnNext.setOnClickListener((View view)->{
 
-
-            try{
-          //      String city = editTextCity.getText().toString();
-
-           //     if(city==null){
-                    Toast.makeText(GetCityActivity.this, "Please Enter the name of City", Toast.LENGTH_SHORT).show();
-               // }else{
-
-                //    Intent myRes = new Intent(GetCityActivity.this,GetServiceActivity.class);
-
-                    Bundle bundle = new Bundle();
-                  //  bundle.putString("CITY", city);
-
-               //     myRes.putExtras(bundle);
-
-                //    startActivity(myRes);
-              //  }
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        });*/
     }
 
     @Override

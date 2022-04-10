@@ -1,14 +1,13 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 public class ServiceDetails extends AppCompatActivity {
 
@@ -33,6 +32,7 @@ public class ServiceDetails extends AppCompatActivity {
         String wage = data.getString("WAGE", "error");
         String description = data.getString("DESCRIPTION", "error");
         String username = data.getString("USERNAME");
+        Toast.makeText(ServiceDetails.this, username, Toast.LENGTH_SHORT).show();
 
         Log.d("DES", description+wage);
         

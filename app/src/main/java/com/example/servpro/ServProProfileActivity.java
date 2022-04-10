@@ -111,7 +111,7 @@ public class ServProProfileActivity extends AppCompatActivity {
                 return true;
 
             case R.id.addNewService:
-                startActivity(new Intent(ServProProfileActivity.this, ServProAddNewService.class));
+                startActivity(new Intent(ServProProfileActivity.this, UploadBusActivity.class));
                 return true;
 
             default: return super.onOptionsItemSelected(item);
