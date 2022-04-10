@@ -91,6 +91,7 @@ public class Login2Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Login2Activity.this, ServProProfileActivity.class);
                                 Bundle b = new Bundle();
                                 b.putString("USERNAME",allServiceProvider.get(i).getEmail());
+                                Toast.makeText(Login2Activity.this,allServiceProvider.get(i).getEmail() , Toast.LENGTH_SHORT).show();
                                 intent.putExtras(b);
                                 startActivity(intent);
 

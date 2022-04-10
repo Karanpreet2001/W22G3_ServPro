@@ -110,7 +110,7 @@ public abstract class ServPro extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            connectionDao.insertConnection(new Connection("Karanpreet", "karanpreet@gmail.com", "harmanSingh@gmail.com","Harman Singh"));
+
             connectionDao.insertConnection(new Connection("Tashmeet","tashMeet@gmail.com","harmanSingh@gmail.com","Harman Singh"));
             connectionDao.insertConnection(new Connection("Rohan","rohanSharma@gmail.com","harmanSingh@gmail.com","Harman Singh"));
 
