@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,13 +33,15 @@ public class ServicesActivity extends AppCompatActivity {
     String city, service;
     ServPro servPro;
     ServiceProviderDao serviceProviderDao;
+    final String TAG = "CRASHTAG" ;
 
     ServProViewModel servProViewModel;
     ServicesRecyclerView servicesRecyclerView;
     ShimmerFrameLayout shimmerFrameLayout;
-
+ Button buttonGoogleMaps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
 
@@ -69,6 +72,7 @@ public class ServicesActivity extends AppCompatActivity {
                 shimmerFrameLayout.setVisibility(View.GONE);
                 recyclerViewServices.setVisibility(View.VISIBLE);
                 Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
+                Log.d(TAG,"THIS IS RUNNING");
 
                 recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
                     @Override
@@ -78,7 +82,7 @@ public class ServicesActivity extends AppCompatActivity {
                         Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
                         Bundle b = new Bundle();
                         b.putString("USERNAME", username);
-                        b.putString("NAME",extractList.get(index).getServiceProvider());
+                        b.putString("NAME", extractList.get(index).getServiceProvider());
                         b.putString("AGE", extractList.get(index).getAge());
                         b.putString("OCCU", extractList.get(index).getOccupation());
                         b.putString("EMAIL", extractList.get(index).getEmail());
@@ -91,15 +95,26 @@ public class ServicesActivity extends AppCompatActivity {
                         result.putExtras(b);
                         startActivity(result);
                     }
+                }, new ServicesRecyclerView.OnClickMapItem() {
+                    @Override
+                    public void onClickMapItem(int index) {
+                        Intent i = new Intent(ServicesActivity.this, googleMaps.class);
+                        Bundle b = new Bundle();
+                        b.putDouble("LAT",extractList.get(index).getLatitude());
+                        b.putDouble("LON",extractList.get(index).getLongitude());
+                        i.putExtras(b);
+                        startActivity(i);
+
+                    }
                 }));
 
 
 
-
-
-
             }
+
+
         });
+
 
 
 
@@ -116,52 +131,15 @@ public class ServicesActivity extends AppCompatActivity {
 
 
 
-//        ExecutorService executorService = Executors.newSingleThreadExecutor();
-//
-//        executorService.execute(() ->{
-//
-//
-//             extractList = serviceProviderDao.getServiceProviderAccordingly(city, service);
-//
-//
-//
-//
-//            runOnUiThread(() -> {
-//
-//                 servicesRecyclerView = new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
-//                    @Override
-//                    public void onClickItem(int index) {
-//
-//                        Intent result = new Intent(ServicesActivity.this, ServiceDetails.class);
-//                        Bundle b = new Bundle();
-//                        b.putString("NAME",extractList.get(index).getServiceProvider());
-//                        b.putString("AGE", extractList.get(index).getAge());
-//                        b.putString("OCCU", extractList.get(index).getOccupation());
-//                        b.putString("EMAIL", extractList.get(index).getEmail());
-//                        b.putString("PHONE", extractList.get(index).getPhone());
-//                        b.putString("ADDRESS", extractList.get(index).getStreet());
-//                        b.putString("CITY", extractList.get(index).getCity());
-//                        b.putString("WAGE", extractList.get(index).getWage());
-//                        b.putString("DESCRIPTION", extractList.get(index).getDescription());
-//
-//                        result.putExtras(b);
-//                        startActivity(result);
-//                    }
-//                });
-//
-//                shimmerFrameLayout.stopShimmer();
-//                shimmerFrameLayout.setVisibility(View.GONE);
-//                recyclerViewServices.setVisibility(View.VISIBLE);
-//
-//
-//                recyclerViewServices.setAdapter(servicesRecyclerView);
-//            });
-//
-//
-//        });
-//
-//
-       }
+
+        buttonGoogleMaps=findViewById(R.id.buttonGoogleMaps);
+
+        buttonGoogleMaps.setOnClickListener((View view)->{
+
+            startActivity(new Intent(ServicesActivity.this,googleMaps.class));
+
+        });
+    }
 
 
     @Override

@@ -23,12 +23,20 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
     List<ServiceProvider> serviceProviderListFull;
 
     OnClickItem onClickItemListener;
+    OnClickMapItem onClickMapItem;
 
-    public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItemListener) {
+    public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItemListener, OnClickMapItem onClickMapItem) {
         this.serviceProviderList = serviceProviderList;
         this.onClickItemListener = onClickItemListener;
+        this.onClickMapItem = onClickMapItem;
         serviceProviderListFull= new ArrayList<>(serviceProviderList);
     }
+
+//    public ServicesRecyclerView(List<ServiceProvider> serviceProviderList, OnClickItem onClickItemListener) {
+//        this.serviceProviderList = serviceProviderList;
+//        this.onClickItemListener = onClickItemListener;
+//        serviceProviderListFull= new ArrayList<>(serviceProviderList);
+//    }
 
     @NonNull
     @Override
@@ -47,6 +55,11 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
 
         sph.itemView.setOnClickListener((View vie)-> {
             onClickItemListener.onClickItem(sph.getAdapterPosition());
+
+        });
+
+        sph.txtProCity.setOnClickListener((View vie)-> {
+            onClickMapItem.onClickMapItem(sph.getAdapterPosition());
 
         });
 
@@ -123,5 +136,10 @@ public class ServicesRecyclerView extends RecyclerView.Adapter<ServicesRecyclerV
     public interface OnClickItem{
 
         void onClickItem(int index);
+    }
+
+    public interface OnClickMapItem{
+
+        void onClickMapItem(int index);
     }
 }

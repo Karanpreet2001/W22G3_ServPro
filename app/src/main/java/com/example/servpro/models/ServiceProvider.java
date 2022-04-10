@@ -58,6 +58,15 @@ public class ServiceProvider {
     private int images;
 
 
+    @ColumnInfo(name = "latitude")
+    private double latitude;
+
+
+
+    @ColumnInfo(name = "longitude")
+    private double longitude;
+
+
 
     public ServiceProvider() {
     }
@@ -88,6 +97,39 @@ public class ServiceProvider {
         this.password = password;
         this.description = description;
         this.images = images;
+    }
+
+    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age, @NonNull String occupation, @NonNull String email, String phone, @NonNull String street, String city, String wage, @NonNull String password, String description, int images, double latitude, double longitude) {
+        this.serviceProvider = serviceProvider;
+        this.age = age;
+        this.occupation = occupation;
+        this.email = email;
+        this.phone = phone;
+        this.street = street;
+        this.city = city;
+        this.wage = wage;
+        this.password = password;
+        this.description = description;
+        this.images = images;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public int getImages() {

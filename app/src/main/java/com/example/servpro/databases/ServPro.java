@@ -34,6 +34,8 @@ public abstract class ServPro extends RoomDatabase {
 
     public  abstract ConnectionDao connectionDao();
 
+//    public abstract CoordinateDao coordinateDao();
+
     public  abstract DealDao dealDao();
 
     public static synchronized  ServPro getInstance(Context context){
@@ -68,7 +70,7 @@ public abstract class ServPro extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            serviceProviderDao.insert(new ServiceProvider("Harman Singh","21","Carpenter","harmanSingh@gmail.com","6598566325","6537 Cambie street","Vancouver","32","harman@123","iam somthing aaaaakk ksksks sksksk", R.drawable.person1));
+            serviceProviderDao.insert(new ServiceProvider("Harman Singh","21","Carpenter","harmanSingh@gmail.com","6598566325","6537 Cambie street","Vancouver","32","harman@123","iam somthing aaaaakk ksksks sksksk", R.drawable.person1,20.23,-124.43));
             serviceProviderDao.insert(new ServiceProvider("Peter Gabrial","32","Carpenter","peterGabri@gmail.com","6047258855","3454 glassmere street","Vancouver","23","peter@123","iam somthing aaaaakk ksksks sksksk",  R.drawable.person2));
             serviceProviderDao.insert(new ServiceProvider("John Smith","21","Carpenter","smithJohn@gmail.com","6598555325","324 Fraser Street","Vancouver","32","john@123","iam somthing aaaaakk ksksks sksksk",  R.drawable.person3));
 
@@ -95,6 +97,8 @@ public abstract class ServPro extends RoomDatabase {
             return null;
         }
     }
+
+
 
     private static class PopulateConnectionDbAsyncTask extends AsyncTask<Void , Void , Void>{
 
