@@ -101,9 +101,9 @@ public class googleMaps extends AppCompatActivity implements OnMapReadyCallback 
         googleMap = googleMap;
         Bundle b = getIntent().getExtras();
         double lat = b.getDouble("LAT");
-        double lon = b.getDouble("LON");
+        double lon = b.getDouble("LONG");
 
-        LatLng latLng = new LatLng(lat, lon);
+        LatLng latLng = new LatLng(49.2820, -123.0692);
         MarkerOptions markerOptions = new MarkerOptions();
 
         markerOptions.title("MyPosition");
@@ -113,6 +113,7 @@ public class googleMaps extends AppCompatActivity implements OnMapReadyCallback 
         googleMap.animateCamera(cameraUpdate);
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.getUiSettings().setCompassEnabled(true);
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,12f));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions

@@ -130,13 +130,7 @@ public class ServicesActivity extends AppCompatActivity {
 
 
 
-        buttonGoogleMaps=findViewById(R.id.buttonGoogleMaps);
 
-        buttonGoogleMaps.setOnClickListener((View view)->{
-
-            startActivity(new Intent(ServicesActivity.this,googleMaps.class));
-
-        });
     }
 
 
