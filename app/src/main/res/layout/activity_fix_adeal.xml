@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DCF6DD"
     tools:context=".FixADealActivity">
 
     <Button
         android:id="@+id/btn_pick_a_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pick A Date"
+        android:layout_width="177dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#7AB337"
+        android:text="Pick Date"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.313" />
 
@@ -21,20 +25,23 @@
         android:id="@+id/txtViewSetDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="42dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_pick_a_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtTypeAMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:textSize="20sp"
+        android:text="Type a Message"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
@@ -46,36 +53,56 @@
         android:id="@+id/txtSelectADate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:textSize="20sp"
+        android:text="Select a Date"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/txtViewSetDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.828" />
 
     <Button
         android:id="@+id/btnMakeADeal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="112dp"
+        android:backgroundTint="#0C7510"
         android:text="Make A Deal"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT THE FOLLOWING"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSelectADate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMessage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextMessage"
-        android:layout_width="235dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="322dp"
+        android:layout_height="96dp"
         android:ems="10"
+        android:gravity="start|top"
         android:hint="Type your message here..."
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:minLines="3"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMakeADeal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTypeAMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTypeAMessage"
+        app:layout_constraintVertical_bias="0.238"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

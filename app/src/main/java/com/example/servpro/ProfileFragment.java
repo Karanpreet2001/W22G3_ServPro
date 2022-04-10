@@ -1,18 +1,14 @@
 package com.example.servpro;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.servpro.databinding.FragmentContactBinding;
-import com.example.servpro.databinding.FragmentProfileBinding;
+import androidx.fragment.app.Fragment;
 
-import org.w3c.dom.Text;
+import com.example.servpro.databinding.FragmentProfileBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,11 +46,11 @@ public class ProfileFragment extends Fragment {
             age = data.getString("AGE", "error");
 
         }
-        txtName.setText(name);
-        txtAge.setText(age);
-        txtOccupation.setText(occupation);
-        txtWage.setText(wage);
-        txtDescription.setText(description);
+        txtName.setText("Name: "+name);
+        txtAge.setText("Age: "+age);
+        txtOccupation.setText("Experienced in : "+occupation);
+        txtWage.setText("Wage per hour: "+wage);
+        txtDescription.setText("Description:\n"+description);
 
         return binding.getRoot();
     }

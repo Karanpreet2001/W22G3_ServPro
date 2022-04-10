@@ -2,17 +2,16 @@ package com.example.servpro;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.FragmentContactBinding;
@@ -22,8 +21,6 @@ import com.example.servpro.models.ServiceProvider;
 import com.example.servpro.viewModel.ServProViewModel;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -72,14 +69,15 @@ public class ContactFragment extends Fragment {
             username = data.getString("USERNAME");
 
         }
+        Toast.makeText(getActivity(), email, Toast.LENGTH_SHORT).show();
 
-        txtEmail.setText(email);
-        txtPhone.setText(phone);
-        txtAddress.setText(address+", "+city);
+        txtEmail.setText("Email: "+email);
+        txtPhone.setText("Phone: "+phone);
+        txtAddress.setText("Address: "+address+", "+city);
 
 
         servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
-        servProViewModel.getServPro(username).observe(getViewLifecycleOwner(), new Observer<List<ServiceProvider>>() {
+        servProViewModel.getAllServPro(email).observe(getViewLifecycleOwner(), new Observer<List<ServiceProvider>>() {
             @Override
             public void onChanged(List<ServiceProvider> serviceProviderList) {
                 custName = serviceProviderList.get(0).getServiceProvider();

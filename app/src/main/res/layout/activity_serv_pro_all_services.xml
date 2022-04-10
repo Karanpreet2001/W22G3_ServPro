@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServProAllServices">
+    tools:context=".ServProAllServices"
+    android:background="#FAF7F7">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAllServices"
@@ -22,6 +23,7 @@
         android:layout_marginTop="32dp"
         android:text="ALL SERVICES"
         android:textSize="34sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

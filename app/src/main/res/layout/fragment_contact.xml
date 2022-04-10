@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactFragment">
+    tools:context=".ContactFragment"
+    android:background="#CEE5EF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#CEE5EF">
 
         <TextView
             android:id="@+id/txt_service_contact_title"
@@ -16,43 +18,53 @@
             android:layout_height="78dp"
             android:text="Contact"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textSize="34sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/txt_service_email"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.17000002" />
+            app:layout_constraintVertical_bias="0.106" />
 
         <TextView
             android:id="@+id/txt_service_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:textSize="20sp"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.265" />
+            app:layout_constraintVertical_bias="0.204" />
 
         <TextView
             android:id="@+id/txt_service_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="176dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="164dp"
+            android:textColor="@color/black"
             android:text="TextView"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_service_email" />
 
         <TextView
             android:id="@+id/txt_service_address"
             android:layout_width="wrap_content"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="56dp"
             android:text="TextView"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_service_phone" />
 
@@ -60,22 +72,26 @@
             android:id="@+id/btnConnectToServicePro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#5C06F4"
             android:text="Connect"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.232"
+            app:layout_constraintHorizontal_bias="0.218"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_service_address" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_service_address"
+            app:layout_constraintVertical_bias="0.361" />
 
         <Button
             android:id="@+id/btnSendAMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#065DF4"
             android:text="Set A Deal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.402"
+            app:layout_constraintHorizontal_bias="0.403"
             app:layout_constraintStart_toEndOf="@+id/btnConnectToServicePro"
-            app:layout_constraintTop_toBottomOf="@+id/txt_service_address" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_service_address"
+            app:layout_constraintVertical_bias="0.361" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

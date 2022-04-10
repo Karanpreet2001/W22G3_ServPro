@@ -1,23 +1,21 @@
 package com.example.servpro;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityCustomerRegistrationBinding;
 import com.example.servpro.models.Customer;
 import com.example.servpro.viewModel.ServProViewModel;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class CustomerRegistrationActivity extends AppCompatActivity {
 
@@ -33,6 +31,9 @@ public class CustomerRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCustomerRegistrationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.customer)));
 
         txtName = binding.editCustName;
         txtAddress = binding.editCustAddress;
