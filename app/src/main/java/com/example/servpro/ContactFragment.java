@@ -17,10 +17,8 @@ import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.FragmentContactBinding;
 import com.example.servpro.interfaces.ConnectionDao;
 import com.example.servpro.models.Connection;
-import com.example.servpro.models.ServiceProvider;
+import com.example.servpro.models.Customer;
 import com.example.servpro.viewModel.ServProViewModel;
-
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,7 +67,7 @@ public class ContactFragment extends Fragment {
             username = data.getString("USERNAME");
 
         }
-        Toast.makeText(getActivity(), email, Toast.LENGTH_SHORT).show();
+
 
         txtEmail.setText("Email: "+email);
         txtPhone.setText("Phone: "+phone);
@@ -77,17 +75,18 @@ public class ContactFragment extends Fragment {
 
 
         servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
-        servProViewModel.getAllServPro(email).observe(getViewLifecycleOwner(), new Observer<List<ServiceProvider>>() {
+        servProViewModel.getACustomer(username).observe(getActivity(), new Observer<Customer>() {
             @Override
-            public void onChanged(List<ServiceProvider> serviceProviderList) {
-                custName = serviceProviderList.get(0).getServiceProvider();
+            public void onChanged(Customer customer) {
+                custName = customer.getCustomerName();
             }
         });
 
 
         btnToConnect.setOnClickListener((View vie)-> {
+            Toast.makeText(getActivity(),custName+username , Toast.LENGTH_SHORT).show();
 
-            Connection con = new Connection(username,custName,email,name);
+            Connection con = new Connection(custName,username,email,name);
 
             servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
             servProViewModel.insert(con);

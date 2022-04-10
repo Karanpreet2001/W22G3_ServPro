@@ -8,7 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.servpro.models.Customer;
-import com.example.servpro.models.ServiceProvider;
 
 import java.util.List;
 
@@ -29,8 +28,7 @@ public interface CustomerDao {
     void insertCustomer(Customer customer);
 
 
-    @Query("Select * from customer where email =:custemail")
-    LiveData<Customer> getACustomer(String custemail);
+
 
 
     @Query("SELECT * from customer")

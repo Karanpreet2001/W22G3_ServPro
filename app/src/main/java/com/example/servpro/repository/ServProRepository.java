@@ -134,7 +134,7 @@ public class ServProRepository {
 
         @Override
         protected Void doInBackground(Connection... connections) {
-            connectionDao.insert(connections[0]);
+            connectionDao.insertConnection(connections[0]);
             return null;
         }
     }
