@@ -113,4 +113,17 @@
         app:layout_constraintTop_toBottomOf="@+id/btnGoogleSign"
         app:layout_constraintVertical_bias="0.629" />
 
+    <Button
+        android:id="@+id/btnProviderRegistration"
+        android:layout_width="153dp"
+        android:layout_height="76dp"
+        android:backgroundTint="#3CF144"
+        android:text="Register as Serviec Provider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toEndOf="@+id/btnCustomerRegistration"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSign"
+        app:layout_constraintVertical_bias="0.628" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

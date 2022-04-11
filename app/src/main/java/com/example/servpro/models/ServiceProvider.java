@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.sql.Blob;
+
 @Entity(tableName = "serviceProvider")
 public class ServiceProvider {
 
@@ -46,9 +48,9 @@ public class ServiceProvider {
     @ColumnInfo(name = "password")
     private String password;
 
-//    @NonNull
-//    @ColumnInfo(name= "image")
-//    private Blob image;
+
+  //  @ColumnInfo(name= "image")
+   // private Blob image;
 
 
     @ColumnInfo(name = "description")
@@ -115,6 +117,18 @@ public class ServiceProvider {
         this.longitude = longitude;
     }
 
+    public ServiceProvider(@NonNull String serviceProvider, @NonNull String age ,  @NonNull String occupation, @NonNull String email, String phone, @NonNull String street, @NonNull String password){
+
+
+        this.serviceProvider = serviceProvider;
+        this.age = age;
+        this.occupation = occupation;
+        this.email = email;
+        this.phone = phone;
+        this.street = street;
+        this.password = password;
+
+    }
 
     public double getLatitude() {
         return latitude;

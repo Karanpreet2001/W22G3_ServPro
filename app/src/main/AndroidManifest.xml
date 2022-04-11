@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.servpro">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServPro">
+        <activity
+            android:name=".ServProviderRegistration"
+            android:exported="false" />
         <activity
             android:name=".ServProEditActivity"
             android:exported="false" />
@@ -27,8 +32,9 @@
         <activity
             android:name=".ServProProfileActivity"
             android:exported="false" />
-        <activity android:name=".googleMaps"
-            android:exported="false"/>
+        <activity
+            android:name=".googleMaps"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -50,8 +56,9 @@
         <activity
             android:name=".UploadBusActivity"
             android:exported="false" />
-        <activity android:name=".ServProAllDealsDetails"
-            android:exported="true"/>
+        <activity
+            android:name=".ServProAllDealsDetails"
+            android:exported="true" />
         <activity
             android:name=".ServicesActivity"
             android:exported="false" />
@@ -73,25 +80,23 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".ViewConnectionDetailActivity"
             android:exported="false" />
-
-
-
         <activity
             android:name=".ConnectionActivity"
             android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyALFJdCfwK2IpUDEXzmRnXUHLnyqPDSKQ8"/>
+            android:value="AIzaSyALFJdCfwK2IpUDEXzmRnXUHLnyqPDSKQ8" />
 
-        <uses-library android:name="org.apache.http.legacy"
-            android:required="false"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

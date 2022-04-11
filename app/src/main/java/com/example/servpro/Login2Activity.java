@@ -51,11 +51,18 @@ public class Login2Activity extends AppCompatActivity {
         CheckBox check = binding.checkBox;
         Button btnToCustomerRegister = binding.btnCustomerRegistration;
 
+        Button btnProviderRegister = binding.btnProviderRegistration;
+
         btnToCustomerRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login2Activity.this, CustomerRegistrationActivity.class));
             }
+        });
+
+        btnProviderRegister.setOnClickListener((View view) -> {
+
+            startActivity(new Intent(Login2Activity.this,ServProviderRegistration.class));
         });
 
 
