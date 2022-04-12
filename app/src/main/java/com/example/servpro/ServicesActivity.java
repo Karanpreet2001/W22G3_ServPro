@@ -68,7 +68,7 @@ public class ServicesActivity extends AppCompatActivity {
                 recyclerViewServices.setVisibility(View.VISIBLE);
 //                Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
                 Log.d(TAG,"THIS IS RUNNING");
-
+//
                 recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
                     @Override
                     public void onClickItem(int index) {
