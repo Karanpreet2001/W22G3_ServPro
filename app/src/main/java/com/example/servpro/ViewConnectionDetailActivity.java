@@ -2,7 +2,6 @@ package com.example.servpro;
 
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -27,7 +26,7 @@ public class ViewConnectionDetailActivity extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         String custEmail = b.getString("SE");
-        Toast.makeText(ViewConnectionDetailActivity.this, custEmail, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ViewConnectionDetailActivity.this, custEmail, Toast.LENGTH_SHORT).show();
 
         TextView txtName = binding.txtViewDealsName;
         TextView txtEmail = binding.txtViewDealsEmail;

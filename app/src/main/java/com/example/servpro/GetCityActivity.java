@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -27,8 +26,6 @@ public class GetCityActivity extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         String username = b.getString("USERNAME", "error");
-        Toast.makeText(GetCityActivity.this,username , Toast.LENGTH_SHORT).show();
-
 
 
 

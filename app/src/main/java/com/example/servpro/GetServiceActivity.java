@@ -29,7 +29,7 @@ public class GetServiceActivity extends AppCompatActivity {
             Bundle bun = getIntent().getExtras();
             city= getIntent().getExtras().getString("CITY", "error");
             username = getIntent().getExtras().getString("EMAIL");
-        Toast.makeText(GetServiceActivity.this, username, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(GetServiceActivity.this, username, Toast.LENGTH_SHORT).show();
 
         txtCity.setText(city);
 

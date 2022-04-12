@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#ffffe0"
     tools:context=".ServProProfileActivity">
 
     <TextView
@@ -14,6 +14,7 @@
         android:layout_marginTop="84dp"
         android:fontFamily="@font/aladin"
         android:text="TextView"
+        android:textColor="@color/purple_700"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.426"
@@ -24,9 +25,10 @@
         android:id="@+id/txtEmailOfServPro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="156dp"
         android:text="TextView"
+        android:textColor="@color/purple_500"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textServProName" />
@@ -35,9 +37,10 @@
         android:id="@+id/txtPhoneOfServPro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:text="TextView"
+        android:textColor="@color/purple_500"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/txtEmailOfServPro" />
@@ -50,6 +53,8 @@
         android:layout_marginTop="156dp"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:text="Email"
+        android:textColor="@color/black"
+        android:textColorLink="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textServProName" />
@@ -62,6 +67,7 @@
         android:layout_marginTop="40dp"
         android:drawableLeft="@drawable/ic_phone_24"
         android:text="Phone"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -71,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="324dp"
+        android:textColor="@color/purple_700"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.423"
@@ -82,8 +89,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:text="@string/textClickToView"
+        android:textColor="@color/purple_700"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noOfServices" />

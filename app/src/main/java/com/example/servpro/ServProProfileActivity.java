@@ -1,23 +1,20 @@
 package com.example.servpro;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.servpro.databases.ServPro;
 import com.example.servpro.databinding.ActivityServProProfileBinding;
@@ -26,8 +23,6 @@ import com.example.servpro.models.ServiceProvider;
 import com.example.servpro.viewModel.ServProViewModel;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ServProProfileActivity extends AppCompatActivity {
 
@@ -59,7 +54,7 @@ public class ServProProfileActivity extends AppCompatActivity {
 
         Bundle b = getIntent().getExtras();
         email = b.getString("USERNAME","error");
-        Toast.makeText(ServProProfileActivity.this, email, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ServProProfileActivity.this, email, Toast.LENGTH_SHORT).show();
 
 
 

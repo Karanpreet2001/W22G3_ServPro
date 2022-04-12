@@ -60,10 +60,10 @@ public abstract class ServPro extends RoomDatabase {
     };
 
     private static class PopulateServiceProDbAsyncTask extends AsyncTask<Void, Void, Void>{
-
         private ServiceProviderDao serviceProviderDao;
 
-        public PopulateServiceProDbAsyncTask(ServPro db) {
+        public
+ PopulateServiceProDbAsyncTask(ServPro db) {
             serviceProviderDao = db.serviceProviderDao();
         }
 

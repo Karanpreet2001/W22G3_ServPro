@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffe0"
     tools:context=".ViewConnectionDetailActivity">
 
     <TextView
         android:id="@+id/txtViewDealsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="140dp"
         android:drawableLeft="@drawable/ic_person"
 
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +25,7 @@
         android:id="@+id/txtViewDealsEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="32dp"
         android:drawableLeft="@drawable/custom_login_email"
         android:paddingStart="12dp"
@@ -31,6 +33,7 @@
         android:paddingTop="12dp"
         android:paddingEnd="12dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/txtViewDealsName" />
@@ -39,11 +42,12 @@
         android:id="@+id/txtViewDealsPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:drawableLeft="@drawable/ic_phone_24"
 
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/txtViewDealsEmail" />
@@ -52,11 +56,12 @@
         android:id="@+id/txtViewDealsAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:drawableLeft="@drawable/ic_home_24"
 
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/txtViewDealsPhone" />
@@ -65,10 +70,11 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="48dp"
 
         android:text="Phone"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -77,10 +83,11 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
 
         android:text="Email"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -89,10 +96,11 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
 
         android:text="Address"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -101,10 +109,11 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="140dp"
 
         android:text="Name"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -117,10 +126,10 @@
 
         android:text="Person's Details"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_700"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

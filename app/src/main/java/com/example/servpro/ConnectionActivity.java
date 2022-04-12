@@ -1,19 +1,15 @@
 package com.example.servpro;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.servpro.adapters.ConnectionAdapter;
 import com.example.servpro.databases.ServPro;
@@ -23,10 +19,6 @@ import com.example.servpro.models.Connection;
 import com.example.servpro.viewModel.ServProViewModel;
 
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import io.reactivex.internal.operators.observable.ObservableDoAfterNext;
 
 public class ConnectionActivity extends AppCompatActivity {
 
@@ -61,7 +53,7 @@ public class ConnectionActivity extends AppCompatActivity {
                         Intent intent = new Intent(ConnectionActivity.this, ViewConnectionDetailActivity.class);
                         Bundle b = new Bundle();
                         b.putString("SE", connections.get(index).getCustemail());
-                        Toast.makeText(ConnectionActivity.this, connections.get(index).getCustemail() , Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(ConnectionActivity.this, connections.get(index).getCustemail() , Toast.LENGTH_SHORT).show();
                         intent.putExtras(b);
                         startActivity(intent);
 

@@ -3,15 +3,10 @@ package com.example.servpro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -71,7 +66,7 @@ public class ServicesActivity extends AppCompatActivity {
                 shimmerFrameLayout.stopShimmer();
                 shimmerFrameLayout.setVisibility(View.GONE);
                 recyclerViewServices.setVisibility(View.VISIBLE);
-                Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ServicesActivity.this,extractList.size()+"" , Toast.LENGTH_SHORT).show();
                 Log.d(TAG,"THIS IS RUNNING");
 
                 recyclerViewServices.setAdapter(new ServicesRecyclerView(extractList, new ServicesRecyclerView.OnClickItem() {
@@ -136,28 +131,6 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+  
 
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_serachbar, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                servicesRecyclerView.getFilter().filter(s);
-                return false;
-            }
-        });
-
-        return  true;
-    }
 }

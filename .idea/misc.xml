@@ -6,6 +6,11 @@
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/button_bg.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/custom_login_password.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/dialog_background.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/ic_baseline_how_to_reg_24.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/ic_baseline_lock_focused_24.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.14322916666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/drawable/ic_search.xml" value="0.14114583333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_customer_registration.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_fix_adeal.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_get_city.xml" value="0.25" />
@@ -17,12 +22,13 @@
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_add_new_service.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_all_deals.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_all_deals_details.xml" value="0.4" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_all_deals_details.xml" value="0.2" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_all_services.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_edit.xml" value="0.25" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_serv_pro_profile.xml" value="0.4" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_service_details.xml" value="0.25" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_services.xml" value="0.25" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_splash.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_upload_bus.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_user_register.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/activity_view_connection_detail.xml" value="0.2" />
@@ -32,7 +38,7 @@
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_all_services.xml" value="0.264" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_connect.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_deal.xml" value="0.264" />
-        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_row.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_row.xml" value="0.264" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/layout/layout_shimmer.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/stash/AndroidStudioProjects/W22G3_ServPro-master-01/app/src/main/res/menu/citymenu.xml" value="0.176" />
         <entry key="..\:/term 5/mobile application development/FinalProject/app/src/main/res/layout/activity_get_city.xml" value="0.264" />

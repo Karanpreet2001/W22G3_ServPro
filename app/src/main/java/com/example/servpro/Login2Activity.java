@@ -91,7 +91,6 @@ public class Login2Activity extends AppCompatActivity {
                                 Intent intent = new Intent(Login2Activity.this, ServProProfileActivity.class);
                                 Bundle b = new Bundle();
                                 b.putString("USERNAME",allServiceProvider.get(i).getEmail());
-                                Toast.makeText(Login2Activity.this,allServiceProvider.get(i).getEmail() , Toast.LENGTH_SHORT).show();
                                 intent.putExtras(b);
                                 startActivity(intent);
 
@@ -143,14 +142,6 @@ public class Login2Activity extends AppCompatActivity {
 
             }
 
-
-
-
-//                    if (!executorService.isTerminated()) {
-//                        Log.d(TAG, "THIS");
-//                        // Toast.makeText(Login2Activity.this, "Username or Passoword Incorrect",
-//                        //     Toast.LENGTH_SHORT).show();
-//                    }
 
 
 

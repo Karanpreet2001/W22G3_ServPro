@@ -74,6 +74,8 @@ public class FixADealActivity extends AppCompatActivity {
 
                 servProViewModel = new ViewModelProvider(this).get(ServProViewModel.class);
                 servProViewModel.insert(deal);
+                Toast.makeText(FixADealActivity.this, "Your Appointment is Fixed", Toast.LENGTH_SHORT).show();
+
             } else {
                 Toast.makeText(FixADealActivity.this, "Please Select Date", Toast.LENGTH_SHORT).show();
             }
