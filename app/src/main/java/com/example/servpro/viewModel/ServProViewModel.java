@@ -47,6 +47,9 @@ public class ServProViewModel extends AndroidViewModel {
     public void insert(Customer customer){
         repository.insert(customer);
     }
+    public void insert(ServiceProvider serviceProvider){
+        repository.insert(serviceProvider);
+    }
 
     public void insert(Deals deals){
         repository.insert(deals);
@@ -77,4 +80,6 @@ public class ServProViewModel extends AndroidViewModel {
     public void servProUpdate(ServiceProvider serviceProvider){
         repository.update(serviceProvider);
     }
+
+
 }
