@@ -62,7 +62,7 @@ public class ServicesActivity extends AppCompatActivity {
         servProViewModel.getServicesByCAS(city,service).observe(this, new Observer<List<ServiceProvider>>() {
             @Override
             public void onChanged(List<ServiceProvider> extractList) {
-
+//
                 shimmerFrameLayout.stopShimmer();
                 shimmerFrameLayout.setVisibility(View.GONE);
                 recyclerViewServices.setVisibility(View.VISIBLE);
